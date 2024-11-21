@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Dmitriy Mastitskiy <dimulgator@outlook.com>"]
 edition = "2021"
 license = "MIT"
+homepage = "https://github.com/DMoscicki/k8s-rs-pb/"
+repository = "https://github.com/DMoscicki/k8s-rs-pb/"
+documentation = "https://github.com/DMoscicki/k8s-rs-pb/blob/master/README.md"
 publish = true
 
 [dependencies]
