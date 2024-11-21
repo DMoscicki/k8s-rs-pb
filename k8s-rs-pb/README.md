@@ -1,4 +1,7 @@
-This package is experimental and try to convert answer from k8s-openapi to rust-protobuf in kube-rs.
+This package is experimental and I tried to convert answer from k8s-openapi (kube-rs) to rust-protobuf.
+
+In the future I will add Serialize to custom_date.
+At this time i only need the Deserialize (i don't like to work with JSON).
 
 ```
 use k8s-rs-pb::api::core::v1::{Node, Pod, PodList, Event};
