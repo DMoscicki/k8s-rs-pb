@@ -1,0 +1,7 @@
+[workspace]
+default-members = ["k8s-rs-pb"]
+members = [
+  "k8s-rs-pb-codegen",
+  "k8s-rs-pb"
+]
+resolver = "2"

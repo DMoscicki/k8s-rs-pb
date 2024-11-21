@@ -1,0 +1,11 @@
+[package]
+name = "k8s-rs-pb-codegen"
+version = "0.1.0"
+authors = ["Dmitriy Mastitskiy <dimulgator@outlook.com>"]
+edition = "2021"
+license = "MIT"
+publish = false
+
+[dependencies]
+protobuf-codegen = "3.7.1"
+protobuf = "3.7.1"

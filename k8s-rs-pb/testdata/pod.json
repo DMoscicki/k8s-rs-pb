@@ -1,0 +1,436 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "annotations": {
+      "kubeadm.kubernetes.io/etcd.advertise-client-urls": "https://192.168.49.2:2379",
+      "kubernetes.io/config.hash": "a5363f4f31e043bdae3c93aca4991903",
+      "kubernetes.io/config.mirror": "a5363f4f31e043bdae3c93aca4991903",
+      "kubernetes.io/config.seen": "2024-10-07T18:55:57.595718066Z",
+      "kubernetes.io/config.source": "file"
+    },
+    "creationTimestamp": "2024-10-07T18:55:57Z",
+    "labels": {
+      "component": "etcd",
+      "tier": "control-plane"
+    },
+    "managedFields": [
+      {
+        "apiVersion": "v1",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              ".": {},
+              "f:kubeadm.kubernetes.io/etcd.advertise-client-urls": {},
+              "f:kubernetes.io/config.hash": {},
+              "f:kubernetes.io/config.mirror": {},
+              "f:kubernetes.io/config.seen": {},
+              "f:kubernetes.io/config.source": {}
+            },
+            "f:labels": {
+              ".": {},
+              "f:component": {},
+              "f:tier": {}
+            },
+            "f:ownerReferences": {
+              ".": {},
+              "k:{\"uid\":\"13731bf5-cc79-4f35-aa49-e210b6e657bc\"}": {}
+            }
+          },
+          "f:spec": {
+            "f:containers": {
+              "k:{\"name\":\"etcd\"}": {
+                ".": {},
+                "f:command": {},
+                "f:image": {},
+                "f:imagePullPolicy": {},
+                "f:livenessProbe": {
+                  ".": {},
+                  "f:failureThreshold": {},
+                  "f:httpGet": {
+                    ".": {},
+                    "f:host": {},
+                    "f:path": {},
+                    "f:port": {},
+                    "f:scheme": {}
+                  },
+                  "f:initialDelaySeconds": {},
+                  "f:periodSeconds": {},
+                  "f:successThreshold": {},
+                  "f:timeoutSeconds": {}
+                },
+                "f:name": {},
+                "f:readinessProbe": {
+                  ".": {},
+                  "f:failureThreshold": {},
+                  "f:httpGet": {
+                    ".": {},
+                    "f:host": {},
+                    "f:path": {},
+                    "f:port": {},
+                    "f:scheme": {}
+                  },
+                  "f:periodSeconds": {},
+                  "f:successThreshold": {},
+                  "f:timeoutSeconds": {}
+                },
+                "f:resources": {
+                  ".": {},
+                  "f:requests": {
+                    ".": {},
+                    "f:cpu": {},
+                    "f:memory": {}
+                  }
+                },
+                "f:startupProbe": {
+                  ".": {},
+                  "f:failureThreshold": {},
+                  "f:httpGet": {
+                    ".": {},
+                    "f:host": {},
+                    "f:path": {},
+                    "f:port": {},
+                    "f:scheme": {}
+                  },
+                  "f:initialDelaySeconds": {},
+                  "f:periodSeconds": {},
+                  "f:successThreshold": {},
+                  "f:timeoutSeconds": {}
+                },
+                "f:terminationMessagePath": {},
+                "f:terminationMessagePolicy": {},
+                "f:volumeMounts": {
+                  ".": {},
+                  "k:{\"mountPath\":\"/var/lib/minikube/certs/etcd\"}": {
+                    ".": {},
+                    "f:mountPath": {},
+                    "f:name": {}
+                  },
+                  "k:{\"mountPath\":\"/var/lib/minikube/etcd\"}": {
+                    ".": {},
+                    "f:mountPath": {},
+                    "f:name": {}
+                  }
+                }
+              }
+            },
+            "f:dnsPolicy": {},
+            "f:enableServiceLinks": {},
+            "f:hostNetwork": {},
+            "f:nodeName": {},
+            "f:priority": {},
+            "f:priorityClassName": {},
+            "f:restartPolicy": {},
+            "f:schedulerName": {},
+            "f:securityContext": {
+              ".": {},
+              "f:seccompProfile": {
+                ".": {},
+                "f:type": {}
+              }
+            },
+            "f:terminationGracePeriodSeconds": {},
+            "f:tolerations": {},
+            "f:volumes": {
+              ".": {},
+              "k:{\"name\":\"etcd-certs\"}": {
+                ".": {},
+                "f:hostPath": {
+                  ".": {},
+                  "f:path": {},
+                  "f:type": {}
+                },
+                "f:name": {}
+              },
+              "k:{\"name\":\"etcd-data\"}": {
+                ".": {},
+                "f:hostPath": {
+                  ".": {},
+                  "f:path": {},
+                  "f:type": {}
+                },
+                "f:name": {}
+              }
+            }
+          }
+        },
+        "manager": "kubelet",
+        "operation": "Update",
+        "time": "2024-10-07T18:55:57Z"
+      },
+      {
+        "apiVersion": "v1",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:status": {
+            "f:conditions": {
+              ".": {},
+              "k:{\"type\":\"ContainersReady\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"Initialized\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"PodScheduled\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"Ready\"}": {
+                ".": {},
+                "f:lastProbeTime": {},
+                "f:lastTransitionTime": {},
+                "f:status": {},
+                "f:type": {}
+              }
+            },
+            "f:containerStatuses": {},
+            "f:hostIP": {},
+            "f:hostIPs": {},
+            "f:phase": {},
+            "f:podIP": {},
+            "f:podIPs": {
+              ".": {},
+              "k:{\"ip\":\"192.168.49.2\"}": {
+                ".": {},
+                "f:ip": {}
+              }
+            },
+            "f:startTime": {}
+          }
+        },
+        "manager": "kubelet",
+        "operation": "Update",
+        "subresource": "status",
+        "time": "2024-10-26T20:28:48Z"
+      }
+    ],
+    "name": "etcd-minikube",
+    "namespace": "kube-system",
+    "ownerReferences": [
+      {
+        "apiVersion": "v1",
+        "controller": true,
+        "kind": "Node",
+        "name": "minikube",
+        "uid": "13731bf5-cc79-4f35-aa49-e210b6e657bc"
+      }
+    ],
+    "resourceVersion": "55289",
+    "uid": "b6306c75-4bf9-44c4-9a5c-1bb98d29730e"
+  },
+  "spec": {
+    "containers": [
+      {
+        "command": [
+          "etcd",
+          "--advertise-client-urls=https://192.168.49.2:2379",
+          "--cert-file=/var/lib/minikube/certs/etcd/server.crt",
+          "--client-cert-auth=true",
+          "--data-dir=/var/lib/minikube/etcd",
+          "--experimental-initial-corrupt-check=true",
+          "--experimental-watch-progress-notify-interval=5s",
+          "--initial-advertise-peer-urls=https://192.168.49.2:2380",
+          "--initial-cluster=minikube=https://192.168.49.2:2380",
+          "--key-file=/var/lib/minikube/certs/etcd/server.key",
+          "--listen-client-urls=https://127.0.0.1:2379,https://192.168.49.2:2379",
+          "--listen-metrics-urls=http://127.0.0.1:2381",
+          "--listen-peer-urls=https://192.168.49.2:2380",
+          "--name=minikube",
+          "--peer-cert-file=/var/lib/minikube/certs/etcd/peer.crt",
+          "--peer-client-cert-auth=true",
+          "--peer-key-file=/var/lib/minikube/certs/etcd/peer.key",
+          "--peer-trusted-ca-file=/var/lib/minikube/certs/etcd/ca.crt",
+          "--proxy-refresh-interval=70000",
+          "--snapshot-count=10000",
+          "--trusted-ca-file=/var/lib/minikube/certs/etcd/ca.crt"
+        ],
+        "image": "registry.k8s.io/etcd:3.5.15-0",
+        "imagePullPolicy": "IfNotPresent",
+        "livenessProbe": {
+          "failureThreshold": 8,
+          "httpGet": {
+            "host": "127.0.0.1",
+            "path": "/livez",
+            "port": 2381,
+            "scheme": "HTTP"
+          },
+          "initialDelaySeconds": 10,
+          "periodSeconds": 10,
+          "successThreshold": 1,
+          "timeoutSeconds": 15
+        },
+        "name": "etcd",
+        "readinessProbe": {
+          "failureThreshold": 3,
+          "httpGet": {
+            "host": "127.0.0.1",
+            "path": "/readyz",
+            "port": 2381,
+            "scheme": "HTTP"
+          },
+          "periodSeconds": 1,
+          "successThreshold": 1,
+          "timeoutSeconds": 15
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "100Mi"
+          }
+        },
+        "startupProbe": {
+          "failureThreshold": 24,
+          "httpGet": {
+            "host": "127.0.0.1",
+            "path": "/readyz",
+            "port": 2381,
+            "scheme": "HTTP"
+          },
+          "initialDelaySeconds": 10,
+          "periodSeconds": 10,
+          "successThreshold": 1,
+          "timeoutSeconds": 15
+        },
+        "terminationMessagePath": "/dev/termination-log",
+        "terminationMessagePolicy": "File",
+        "volumeMounts": [
+          {
+            "mountPath": "/var/lib/minikube/etcd",
+            "name": "etcd-data"
+          },
+          {
+            "mountPath": "/var/lib/minikube/certs/etcd",
+            "name": "etcd-certs"
+          }
+        ]
+      }
+    ],
+    "dnsPolicy": "ClusterFirst",
+    "enableServiceLinks": true,
+    "hostNetwork": true,
+    "nodeName": "minikube",
+    "preemptionPolicy": "PreemptLowerPriority",
+    "priority": 2000001000,
+    "priorityClassName": "system-node-critical",
+    "restartPolicy": "Always",
+    "schedulerName": "default-scheduler",
+    "securityContext": {
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "terminationGracePeriodSeconds": 30,
+    "tolerations": [
+      {
+        "effect": "NoExecute",
+        "operator": "Exists"
+      }
+    ],
+    "volumes": [
+      {
+        "hostPath": {
+          "path": "/var/lib/minikube/certs/etcd",
+          "type": "DirectoryOrCreate"
+        },
+        "name": "etcd-certs"
+      },
+      {
+        "hostPath": {
+          "path": "/var/lib/minikube/etcd",
+          "type": "DirectoryOrCreate"
+        },
+        "name": "etcd-data"
+      }
+    ]
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2024-10-26T20:28:31Z",
+        "status": "True",
+        "type": "PodReadyToStartContainers"
+      },
+      {
+        "lastTransitionTime": "2024-10-26T20:28:30Z",
+        "status": "True",
+        "type": "Initialized"
+      },
+      {
+        "lastTransitionTime": "2024-10-26T20:28:48Z",
+        "status": "True",
+        "type": "Ready"
+      },
+      {
+        "lastTransitionTime": "2024-10-26T20:28:48Z",
+        "status": "True",
+        "type": "ContainersReady"
+      },
+      {
+        "lastTransitionTime": "2024-10-26T20:28:30Z",
+        "status": "True",
+        "type": "PodScheduled"
+      }
+    ],
+    "containerStatuses": [
+      {
+        "containerID": "cri-o://7cffba3d119474ac83befc1441836ce950283148e71c12dab5341598d3f0bcc9",
+        "image": "registry.k8s.io/etcd:3.5.15-0",
+        "imageID": "registry.k8s.io/etcd@sha256:4e535f53f767fe400c2deec37fef7a6ab19a79a1db35041d067597641cd8b89d",
+        "lastState": {},
+        "name": "etcd",
+        "ready": true,
+        "restartCount": 10,
+        "started": true,
+        "state": {
+          "running": {
+            "startedAt": "2024-10-26T20:28:30Z"
+          }
+        },
+        "volumeMounts": [
+          {
+            "mountPath": "/var/lib/minikube/etcd",
+            "name": "etcd-data"
+          },
+          {
+            "mountPath": "/var/lib/minikube/certs/etcd",
+            "name": "etcd-certs"
+          }
+        ]
+      }
+    ],
+    "hostIP": "192.168.49.2",
+    "hostIPs": [
+      {
+        "ip": "192.168.49.2"
+      }
+    ],
+    "phase": "Running",
+    "podIP": "192.168.49.2",
+    "podIPs": [
+      {
+        "ip": "192.168.49.2"
+      }
+    ],
+    "qosClass": "Burstable",
+    "startTime": "2024-10-26T20:28:30Z"
+  }
+}
