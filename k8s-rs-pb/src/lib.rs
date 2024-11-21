@@ -82,12 +82,13 @@ pub mod converter {
 
     /// Function for convertion from k8s_openapi to rust-protobuf
     /// # Example
+    /// 
     /// ``` 
-    /// use k8s-rs-pb::api::core::v1::{Node, Pod, PodList, Event};
-    /// use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
+    /// use k8s_rs_pb::api::core::v1::Pod;
+    /// use k8s_openapi::api::core::v1::Pod as OtherPod;
     /// 
     /// let pod_openapi = OtherPod::default();
-    /// let pod_pb: Pod = converter::from_openapi(pod_openapi).unwrap();
+    /// let pod_pb: Pod = k8s_rs_pb::converter::from_openapi(pod_openapi).unwrap();
     /// assert_eq!(pod_pb.has_metadata(), true);
     /// ```
     pub fn from_openapi<P, T>(val: T) -> Result<P, io::Error>
