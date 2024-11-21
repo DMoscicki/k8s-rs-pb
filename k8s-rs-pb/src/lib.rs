@@ -14,10 +14,10 @@ pub struct MessageFieldDef<T>(pub Option<Box<T>>); // dont touch
 
 pub mod custom_date {
     use serde::{Deserialize, Deserializer};
-    use super::apimachinery::pkg::apis::meta::v1::Time;
-    use chrono::{self, DateTime};
+    use super::apimachinery::pkg::apis::meta::v1::Time as TimePb;
+    use chrono::DateTime;
     
-    pub fn deserialize<'de, D>(deserializer: D) -> Result<::protobuf::MessageField<Time>, D::Error>
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<::protobuf::MessageField<TimePb>, D::Error>
     where
         D: Deserializer<'de>,
     {
@@ -27,7 +27,7 @@ pub mod custom_date {
                 let secs = val.timestamp();
                 let nanos = val.timestamp_subsec_nanos();
 
-                let mut new_time = Time::new();
+                let mut new_time = TimePb::new();
 
                 new_time.set_seconds(secs);
                 new_time.set_nanos(nanos as i32);
@@ -38,13 +38,12 @@ pub mod custom_date {
             Err(err) => {
                 eprintln!("Parse error: {}", err);
 
-                let def_time = Time::default();
+                let def_time = TimePb::default();
 
                 Ok(protobuf::MessageField::some(def_time))
             },
         }
     }
-    
 }
 
 pub mod quantity_parse {
@@ -75,12 +74,22 @@ pub mod quantity_parse {
     }
 }
 
-
+/// Converter pub
 pub mod converter {
     use std::io;
 
     use serde::{de::DeserializeOwned, Serialize};
 
+    /// Function for convertion from k8s_openapi to rust-protobuf
+    /// # Example
+    /// ``` 
+    /// use k8s-rs-pb::api::core::v1::{Node, Pod, PodList, Event};
+    /// use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
+    /// 
+    /// let pod_openapi = OtherPod::default();
+    /// let pod_pb: Pod = converter::from_openapi(pod_openapi).unwrap();
+    /// assert_eq!(pod_pb.has_metadata(), true);
+    /// ```
     pub fn from_openapi<P, T>(val: T) -> Result<P, io::Error>
     where 
         T: Serialize,
@@ -93,17 +102,17 @@ pub mod converter {
         Ok(pb_value)
     }
 
-    pub fn to_openapi<T, P>(val: P) -> Result<T, io::Error> 
-    where 
-        T: DeserializeOwned,
-        P: Serialize
-    {
-        let val_pb = serde_json::to_value(val).unwrap();
+    // pub fn to_openapi<T, P>(val: P) -> Result<T, io::Error> 
+    // where 
+    //     T: DeserializeOwned,
+    //     P: Serialize
+    // {
+    //     let val_pb = serde_json::to_value(val).unwrap();
 
-        let openapi_value: T = serde_json::from_value(val_pb).unwrap();
+    //     let openapi_value: T = serde_json::from_value(val_pb).unwrap();
 
-        Ok(openapi_value)
-    }
+    //     Ok(openapi_value)
+    // }
 }
 
 
