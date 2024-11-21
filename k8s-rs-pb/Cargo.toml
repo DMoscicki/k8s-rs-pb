@@ -7,6 +7,7 @@ license = "MIT"
 homepage = "https://github.com/DMoscicki/k8s-rs-pb/"
 repository = "https://github.com/DMoscicki/k8s-rs-pb/"
 documentation = "https://github.com/DMoscicki/k8s-rs-pb/blob/master/README.md"
+description = "Converted from k8s-openapi to rust-protobuf"
 publish = true
 
 [dependencies]
