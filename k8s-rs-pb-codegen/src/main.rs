@@ -28,7 +28,12 @@ impl CustomizeCallback for GenStruct {
             return Customize::default().before("#[serde(default)]");
         }
 
+        if field.proto().type_name() == ".apimachinery.pkg.util.intstr.IntOrString" {
+            return Customize::default().before("#[serde(with = \"crate::intorstr\")]\n#[serde(default)]");
+        }
+
         if field.proto().type_() == Type::TYPE_MESSAGE && field.is_singular() {
+
             if field.proto().name().to_lowercase().contains("time") || field.proto().name() == "startedAt" || field.proto().name() == "finishedAt" {
                 return Customize::default().before("#[serde(with = \"crate::custom_date\")]\n#[serde(default)]")
             }

@@ -5305,7 +5305,7 @@ pub struct NetworkPolicyPort {
     // message fields
     // @@protoc_insertion_point(field:api.networking.v1.NetworkPolicyPort.protocol)
     pub protocol: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.networking.v1.NetworkPolicyPort.port)
     pub port: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

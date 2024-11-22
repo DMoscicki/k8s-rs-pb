@@ -710,7 +710,7 @@ pub struct IngressBackend {
     // message fields
     // @@protoc_insertion_point(field:api.networking.v1beta1.IngressBackend.serviceName)
     pub serviceName: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.networking.v1beta1.IngressBackend.servicePort)
     pub servicePort: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

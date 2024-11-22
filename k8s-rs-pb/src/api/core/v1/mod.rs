@@ -20952,7 +20952,7 @@ pub struct HTTPGetAction {
     // message fields
     // @@protoc_insertion_point(field:api.core.v1.HTTPGetAction.path)
     pub path: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.HTTPGetAction.port)
     pub port: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -60578,7 +60578,7 @@ pub struct ServicePort {
     pub appProtocol: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.ServicePort.port)
     pub port: ::std::option::Option<i32>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.ServicePort.targetPort)
     pub targetPort: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -63632,7 +63632,7 @@ impl ::protobuf::reflect::ProtobufValue for Sysctl {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct TCPSocketAction {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.TCPSocketAction.port)
     pub port: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

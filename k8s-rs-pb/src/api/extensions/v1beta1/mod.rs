@@ -5099,7 +5099,7 @@ pub struct IngressBackend {
     // message fields
     // @@protoc_insertion_point(field:api.extensions.v1beta1.IngressBackend.serviceName)
     pub serviceName: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.IngressBackend.servicePort)
     pub servicePort: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -8330,7 +8330,7 @@ pub struct NetworkPolicyPort {
     // message fields
     // @@protoc_insertion_point(field:api.extensions.v1beta1.NetworkPolicyPort.protocol)
     pub protocol: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.NetworkPolicyPort.port)
     pub port: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -10470,11 +10470,11 @@ impl ::protobuf::reflect::ProtobufValue for RollbackConfig {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct RollingUpdateDaemonSet {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.RollingUpdateDaemonSet.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.RollingUpdateDaemonSet.maxSurge)
     pub maxSurge: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -10679,11 +10679,11 @@ impl ::protobuf::reflect::ProtobufValue for RollingUpdateDaemonSet {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct RollingUpdateDeployment {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.RollingUpdateDeployment.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.extensions.v1beta1.RollingUpdateDeployment.maxSurge)
     pub maxSurge: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

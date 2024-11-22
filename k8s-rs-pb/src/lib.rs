@@ -46,6 +46,93 @@ pub mod custom_date {
     }
 }
 
+pub mod intorstr {
+    use std::fmt;
+    use protobuf::MessageField;
+    use serde::{de::Visitor, Deserializer};
+    use super::apimachinery::pkg::util::intstr::IntOrString;
+    
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<::protobuf::MessageField<IntOrString>, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct IntOrStringVisitor;
+
+        impl <'de> Visitor<'de> for IntOrStringVisitor {
+
+            type Value = MessageField<IntOrString>;
+
+            fn expecting(&self, formatter: &mut fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("int or string")
+            }
+
+            fn visit_i64<E>(self, v: i64) -> Result<Self::Value, E>
+                where
+                    E: serde::de::Error,
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_type(v);
+
+                let mes = MessageField::some(int_or_str);
+
+                Ok(mes)  
+                
+            }
+
+            fn visit_i32<E>(self, v: i32) -> Result<Self::Value, E>
+                where
+                    E: serde::de::Error,
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_intVal(v);
+
+                let mes = MessageField::some(int_or_str);
+
+                Ok(mes)  
+            }
+
+            // GitHub issue https://github.com/serde-rs/serde/issues/1162#issuecomment-367955753
+            fn visit_u64<E>(self, v: u64) -> Result<Self::Value, E>
+                where
+                    E: serde::de::Error,
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_type(v as i64);
+
+                let mes = MessageField::some(int_or_str);
+
+                Ok(mes)        
+            }
+            
+            fn visit_u32<E>(self, v: u32) -> Result<Self::Value, E>
+                where
+                    E: serde::de::Error,
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_intVal(v as i32);
+
+                let mes = MessageField::some(int_or_str);
+
+                Ok(mes)
+            }
+
+            fn visit_str<E>(self, v: &str) -> Result<Self::Value, E>
+                where
+                    E: serde::de::Error, 
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_strVal(v.to_owned());
+        
+                let mes = MessageField::some(int_or_str);
+        
+                Ok(mes)
+            }
+        }
+
+        deserializer.deserialize_any(IntOrStringVisitor)
+    }
+}
+
 pub mod quantity_parse {
     use std::collections::BTreeMap;
 
@@ -121,7 +208,7 @@ pub mod converter {
 mod tests {
     use std::fs;
 
-    use api::core::v1::{Node, Pod, PodList, Event};
+    use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
     use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
 
     use super::*;
@@ -139,6 +226,8 @@ mod tests {
         let node_x: Node = converter::from_openapi(node_tt).unwrap();
 
         assert_eq!(node_x.has_metadata(), true);
+
+        // let dpl = ObjectList<Deployment>;
     }
 
     #[test]
@@ -167,6 +256,15 @@ mod tests {
         assert_eq!(pb_pd.has_metadata(), true);
         assert_eq!(pb_pd.has_spec(), true);
         assert_eq!(pb_pd.has_status(), true);
+
+        //close bug with MessageField<IntOrString>
+        let dp_list = fs::read_to_string("testdata/deploy.json").unwrap();
+
+        let x: DeploymentList = serde_json::from_str(&dp_list).unwrap();
+
+        println!{"{:#?}", x};
+
+        assert_eq!(x.has_metadata(), true);
     }
 
     #[test]

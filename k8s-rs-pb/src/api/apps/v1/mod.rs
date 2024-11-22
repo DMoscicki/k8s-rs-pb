@@ -5760,11 +5760,11 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSetStatus {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct RollingUpdateDaemonSet {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateDaemonSet.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateDaemonSet.maxSurge)
     pub maxSurge: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -5969,11 +5969,11 @@ impl ::protobuf::reflect::ProtobufValue for RollingUpdateDaemonSet {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct RollingUpdateDeployment {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateDeployment.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateDeployment.maxSurge)
     pub maxSurge: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -6180,7 +6180,7 @@ pub struct RollingUpdateStatefulSetStrategy {
     // message fields
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateStatefulSetStrategy.partition)
     pub partition: ::std::option::Option<i32>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1.RollingUpdateStatefulSetStrategy.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
