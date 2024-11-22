@@ -2902,11 +2902,11 @@ impl ::protobuf::reflect::ProtobufValue for RollbackConfig {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct RollingUpdateDeployment {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta1.RollingUpdateDeployment.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta1.RollingUpdateDeployment.maxSurge)
     pub maxSurge: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -3113,7 +3113,7 @@ pub struct RollingUpdateStatefulSetStrategy {
     // message fields
     // @@protoc_insertion_point(field:api.apps.v1beta1.RollingUpdateStatefulSetStrategy.partition)
     pub partition: ::std::option::Option<i32>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta1.RollingUpdateStatefulSetStrategy.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

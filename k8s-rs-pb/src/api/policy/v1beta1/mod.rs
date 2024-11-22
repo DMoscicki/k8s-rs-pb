@@ -702,7 +702,7 @@ impl ::protobuf::reflect::ProtobufValue for PodDisruptionBudgetList {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct PodDisruptionBudgetSpec {
     // message fields
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.policy.v1beta1.PodDisruptionBudgetSpec.minAvailable)
     pub minAvailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,
@@ -710,7 +710,7 @@ pub struct PodDisruptionBudgetSpec {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.policy.v1beta1.PodDisruptionBudgetSpec.selector)
     pub selector: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::LabelSelector>,
-    #[serde(with = "crate::MessageFieldDef")]
+    #[serde(with = "crate::intorstr")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.policy.v1beta1.PodDisruptionBudgetSpec.maxUnavailable)
     pub maxUnavailable: ::protobuf::MessageField<crate::apimachinery::pkg::util::intstr::IntOrString>,

@@ -1,13 +1,10 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CODEGEN AND PUBLISH
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
-  pull_request:
     branches: [ "master" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -16,22 +13,6 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  unit:
-    # The type of runner that the job will run on
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - uses: Swatinem/rust-cache@v2
-
-      # Runs a single command using the runners shell
-      - name: Cargo test
-        run: cargo test
   codegen:
     runs-on: ubuntu-latest
     steps:
@@ -50,3 +31,39 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - run: just protos
+
+  crates_io_publish:
+        name: Publish (crates.io)
+        needs:
+          - codegen
+    
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+          - uses: actions/checkout@v4
+          - uses: dtolnay/rust-toolchain@stable
+
+          - name: cargo-release Cache
+            id: cargo_release_cache
+            uses: actions/cache@v4
+            with:
+                path: ~/.cargo/bin/cargo-release
+                key: ${{ runner.os }}-cargo-release
+  
+          - run: cargo install cargo-release
+            if: steps.cargo_release_cache.outputs.cache-hit != 'true'
+    
+          - name: cargo login
+            run: cargo login ${{ secrets.CRATES_IO_API_TOKEN }}
+    
+          - name: "cargo release publish"
+            run: |-
+              cargo release \
+                publish \
+                --workspace \
+                --all-features \
+                --allow-branch HEAD \
+                --no-confirm \
+                --execute
+              cargo logout
+      
