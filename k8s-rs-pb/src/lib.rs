@@ -136,7 +136,7 @@ pub mod intorstr {
 pub mod quantity_parse {
     use std::collections::BTreeMap;
 
-    use serde::{Deserialize, Deserializer};
+    use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
     use crate::apimachinery::pkg::api::resource::Quantity;
     
@@ -157,6 +157,12 @@ pub mod quantity_parse {
             Ok(new_map)
         } else {
             Ok(new_map)
+        }
+    }
+
+    impl Serialize for Quantity {
+        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: Serializer {
+            serializer.serialize_newtype_struct("Quantity", &self.string.as_ref().unwrap())
         }
     }
 }
