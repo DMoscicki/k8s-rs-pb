@@ -1,0 +1,24 @@
+{
+    "apiVersion": "metrics.k8s.io/v1beta1",
+    "containers": [
+        {
+            "name": "etcd",
+            "usage": {
+                "cpu": "19196265n",
+                "memory": "45348Ki"
+            }
+        }
+    ],
+    "kind": "PodMetrics",
+    "metadata": {
+        "creationTimestamp": "2025-03-01T13:45:49Z",
+        "labels": {
+            "component": "etcd",
+            "tier": "control-plane"
+        },
+        "name": "etcd-minikube",
+        "namespace": "kube-system"
+    },
+    "timestamp": "2025-03-01T13:45:45Z",
+    "window": "14.996s"
+}

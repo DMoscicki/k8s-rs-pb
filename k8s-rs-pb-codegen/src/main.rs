@@ -15,7 +15,7 @@ pub struct GenStruct;
 
 impl CustomizeCallback for GenStruct {
     fn message(&self, message: &MessageDescriptor) -> Customize {
-        if message.name() != "Quantity" {
+        if message.name() != "Quantity" && message.name() != "Time" && message.name() != "Duration" {
             return Customize::default().before("#[derive(::serde::Deserialize)]\n#[serde(rename_all = \"snake_case\")]");
         }
 
@@ -38,9 +38,9 @@ impl CustomizeCallback for GenStruct {
 
         if field.proto().type_() == Type::TYPE_MESSAGE && field.is_singular() {
 
-            if field.proto().name().to_lowercase().contains("time") || field.proto().name() == "startedAt" || field.proto().name() == "finishedAt" {
-                return Customize::default().before("#[serde(with = \"crate::custom_date\")]\n#[serde(default)]")
-            }
+            // if field.proto().name().to_lowercase().contains("time") || field.proto().name() == "startedAt" || field.proto().name() == "finishedAt" {
+            //     return Customize::default().before("#[serde(with = \"crate::custom_date\")]\n#[serde(default)]")
+            // }
 
             return Customize::default().before("#[serde(with = \"crate::MessageFieldDef\")]\n#[serde(default)]")
         }
@@ -51,8 +51,8 @@ impl CustomizeCallback for GenStruct {
         Customize::default()
     }
 
-    fn special_field(&self, message: &MessageDescriptor, field: &str) -> Customize {
-        if message.name() != "Quantity" {
+    fn special_field(&self, message: &MessageDescriptor, _field: &str) -> Customize {
+        if message.name() != "Quantity" && message.name() != "Time" && message.name() != "Duration" {
             return Customize::default().before("#[serde(skip)]")
         }
         Customize::default()

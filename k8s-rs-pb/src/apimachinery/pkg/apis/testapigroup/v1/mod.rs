@@ -294,11 +294,11 @@ pub struct CarpCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.testapigroup.v1.CarpCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.testapigroup.v1.CarpCondition.lastProbeTime)
     pub lastProbeTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.testapigroup.v1.CarpCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -1651,7 +1651,7 @@ pub struct CarpStatus {
     pub hostIP: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.testapigroup.v1.CarpStatus.carpIP)
     pub carpIP: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.testapigroup.v1.CarpStatus.startTime)
     pub startTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

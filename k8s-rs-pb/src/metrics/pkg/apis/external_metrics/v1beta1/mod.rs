@@ -35,7 +35,7 @@ pub struct ExternalMetricValue {
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.external_metrics.v1beta1.ExternalMetricValue.metricLabels)
     pub metricLabels: ::std::collections::BTreeMap<::std::string::String, ::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.external_metrics.v1beta1.ExternalMetricValue.timestamp)
     pub timestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

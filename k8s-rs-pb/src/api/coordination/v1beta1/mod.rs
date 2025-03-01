@@ -446,11 +446,11 @@ pub struct LeaseSpec {
     pub holderIdentity: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.coordination.v1beta1.LeaseSpec.leaseDurationSeconds)
     pub leaseDurationSeconds: ::std::option::Option<i32>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.coordination.v1beta1.LeaseSpec.acquireTime)
     pub acquireTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.coordination.v1beta1.LeaseSpec.renewTime)
     pub renewTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

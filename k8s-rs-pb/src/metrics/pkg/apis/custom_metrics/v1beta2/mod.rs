@@ -465,7 +465,7 @@ pub struct MetricValue {
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.custom_metrics.v1beta2.MetricValue.metric)
     pub metric: ::protobuf::MessageField<MetricIdentifier>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.custom_metrics.v1beta2.MetricValue.timestamp)
     pub timestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

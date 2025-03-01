@@ -1797,7 +1797,7 @@ pub struct HorizontalPodAutoscalerCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.autoscaling.v1.HorizontalPodAutoscalerCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.autoscaling.v1.HorizontalPodAutoscalerCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -2641,7 +2641,7 @@ pub struct HorizontalPodAutoscalerStatus {
     // message fields
     // @@protoc_insertion_point(field:api.autoscaling.v1.HorizontalPodAutoscalerStatus.observedGeneration)
     pub observedGeneration: ::std::option::Option<i64>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.autoscaling.v1.HorizontalPodAutoscalerStatus.lastScaleTime)
     pub lastScaleTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

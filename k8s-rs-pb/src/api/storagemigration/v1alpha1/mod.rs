@@ -303,7 +303,7 @@ pub struct MigrationCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.storagemigration.v1alpha1.MigrationCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.storagemigration.v1alpha1.MigrationCondition.lastUpdateTime)
     pub lastUpdateTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
