@@ -1,0 +1,28 @@
+{
+    "apiVersion": "metrics.k8s.io/v1beta1",
+    "kind": "NodeMetrics",
+    "metadata": {
+        "creationTimestamp": "2025-03-01T16:26:01Z",
+        "labels": {
+            "beta.kubernetes.io/arch": "amd64",
+            "beta.kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "amd64",
+            "kubernetes.io/hostname": "minikube",
+            "kubernetes.io/os": "linux",
+            "minikube.k8s.io/commit": "dd5d320e41b5451cdf3c01891bc4e13d189586ed-dirty",
+            "minikube.k8s.io/name": "minikube",
+            "minikube.k8s.io/primary": "true",
+            "minikube.k8s.io/updated_at": "2025_03_01T15_24_24_0700",
+            "minikube.k8s.io/version": "v1.35.0",
+            "node-role.kubernetes.io/control-plane": "",
+            "node.kubernetes.io/exclude-from-external-load-balancers": ""
+        },
+        "name": "minikube"
+    },
+    "timestamp": "2025-03-01T16:25:51Z",
+    "usage": {
+        "cpu": "127591893n",
+        "memory": "813532Ki"
+    },
+    "window": "9.017s"
+}
