@@ -19,15 +19,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: extractions/setup-just@v2
       - uses: arduino/setup-protoc@v3
-      - name: install fd, sd, ripgrep
+      - name: install fd, sd
         run: |
-          sudo apt-get install -y ripgrep
-          export FD_VER=10.2.0
-          export SD_VER=1.0.0
-          curl -sSL "https://github.com/sharkdp/fd/releases/download/v${FD_VER}/fd-v${FD_VER}-x86_64-unknown-linux-musl.tar.gz" \
-            | tar xz --strip-components=1 -C /usr/local/bin/
-          curl -sSL "https://github.com/chmln/sd/releases/download/v${SD_VER}/sd-v${SD_VER}-x86_64-unknown-linux-musl.tar.gz" \
-          | tar xz --strip-components=1 -C /usr/local/bin/
+          sudo apt-get install -y sd fd-find
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
       - run: just protos

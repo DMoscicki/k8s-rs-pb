@@ -328,7 +328,7 @@ mod tests {
     use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
     use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
 
-    use crate::metrics::pkg::apis::metrics::v1alpha1::PodMetrics;
+    use crate::metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics};
 
     use super::*;
 
@@ -350,7 +350,16 @@ mod tests {
     }
 
     #[test]
-    fn succes_metrics() {
+    fn success_metrics_node() {
+        let node = fs::read_to_string("testdata/node_metrics.json").unwrap();
+
+        let nd: NodeMetrics = serde_json::from_str(&node).unwrap();
+
+        println!("{:#?}", nd)
+    }
+
+    #[test]
+    fn succes_metrics_pod() {
         let pod = fs::read_to_string("testdata/etcd_metrics.json").unwrap();
 
         let mut x: PodMetrics = serde_json::from_str(&pod).unwrap();

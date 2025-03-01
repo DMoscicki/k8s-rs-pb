@@ -16,6 +16,9 @@ pub struct GenStruct;
 impl CustomizeCallback for GenStruct {
     fn message(&self, message: &MessageDescriptor) -> Customize {
         if message.name() != "Quantity" && message.name() != "Time" && message.name() != "Duration" {
+            if message.name() == "ContainerMetrics" {
+                return Customize::default().before("#[derive(::serde::Deserialize, ::serde::Serialize)]\n#[serde(rename_all = \"snake_case\")]");
+            }
             return Customize::default().before("#[derive(::serde::Deserialize)]\n#[serde(rename_all = \"snake_case\")]");
         }
 
