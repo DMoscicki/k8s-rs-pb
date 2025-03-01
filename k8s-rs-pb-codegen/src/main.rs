@@ -15,7 +15,11 @@ pub struct GenStruct;
 
 impl CustomizeCallback for GenStruct {
     fn message(&self, message: &MessageDescriptor) -> Customize {
-        Customize::default().before("#[derive(::serde::Deserialize)]\n#[serde(rename_all = \"snake_case\")]")
+        if message.name() != "Quantity" {
+            return Customize::default().before("#[derive(::serde::Deserialize)]\n#[serde(rename_all = \"snake_case\")]");
+        }
+
+        Customize::default()
     }
 
     fn field(&self, field: &FieldDescriptor) -> Customize {
@@ -48,7 +52,10 @@ impl CustomizeCallback for GenStruct {
     }
 
     fn special_field(&self, message: &MessageDescriptor, field: &str) -> Customize {
-        Customize::default().before("#[serde(skip)]")
+        if message.name() != "Quantity" {
+            return Customize::default().before("#[serde(skip)]")
+        }
+        Customize::default()
     }
 }
 
