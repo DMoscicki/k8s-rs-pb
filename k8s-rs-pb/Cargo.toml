@@ -1,6 +1,6 @@
 [package]
 name = "k8s-rs-pb"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Dmitriy Mastitskiy <dimulgator@outlook.com>"]
 edition = "2021"
 license = "MIT"

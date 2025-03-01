@@ -161,9 +161,69 @@ pub mod quantity_parse {
     }
 
     impl Serialize for Quantity {
-        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: Serializer {
-            serializer.serialize_newtype_struct("Quantity", &self.string.as_ref().unwrap())
+        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+            where
+                S: Serializer {
+                serializer.serialize_newtype_struct("Quantity", &self.string.as_ref().unwrap().to_string())
         }
+    }
+
+    impl <'de> Deserialize<'de> for Quantity {
+        fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+            where
+                D: Deserializer<'de> {
+                    let mut quantity = Quantity::new();
+                    let inc_value = String::deserialize(deserializer).unwrap_or_default();
+                    quantity.set_string(convert_incoming_quantity(&inc_value));
+
+                    Ok(quantity)
+        }
+    }
+
+    fn convert_incoming_quantity(value: &str) -> String {
+        if value.contains("Ki") {
+            let (v, _) = value.split_once("Ki").unwrap();
+            format!("{:.1}MB", kib_to_mb(v.parse::<f64>().unwrap()))
+        } else if value.contains("Mi") {
+            let (v, _) = value.split_once("Mi").unwrap();
+            format!("{:.1}MB", mib_to_mb(v.parse::<f64>().unwrap()))
+        } else if value.contains("Gi") {
+            let (v, _) = value.split_once("Gi").unwrap();
+            format!("{:.1}GB", gib_to_gb(v.parse::<f64>().unwrap()))
+        } else if value.contains("n") {
+            let (v, _) = value.split_once("n").unwrap();
+            format!("{:.5}", from_nano_cpu(v.parse::<f64>().unwrap()))
+        } else if value.contains("m") {
+            let (v, _) = value.split_once("m").unwrap();
+            format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
+        } else if value.contains("u") {
+            let (v, _) = value.split_once("u").unwrap();
+            format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
+        } else {
+            value.parse::<f64>().unwrap().to_string()
+        }
+    }
+
+    fn from_nano_cpu(v: f64) -> f64 {
+        v / 1_000_000_000.0
+    }
+    
+    fn from_mega_cpu(v: f64) -> f64 {
+        v / 1_000_000.0
+    }
+
+    fn kib_to_mb(val: f64) -> f64 {
+        (val * 1024.0) / 1_000_000.0
+    }
+    
+    fn mib_to_mb(val: f64) -> f64 {
+        // 1 MiB = 1.048576 MB
+        val * 1.048576
+    }
+    
+    fn gib_to_gb(val: f64) -> f64 {
+        // 1 GiB = 1.073741824 GB
+        val * 1.073741824
     }
 }
 
@@ -217,6 +277,8 @@ mod tests {
     use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
     use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
 
+    use crate::metrics::pkg::apis::metrics::v1alpha1::PodMetrics;
+
     use super::*;
 
     #[test]
@@ -234,6 +296,39 @@ mod tests {
         assert_eq!(node_x.has_metadata(), true);
 
         // let dpl = ObjectList<Deployment>;
+    }
+
+    #[test]
+    fn succes_metrics() {
+        let pod = r#"{
+            "kind": "PodMetrics",
+            "apiVersion": "metrics.k8s.io/v1beta1",
+            "metadata": {
+              "name": "metrics-server-6db985556d-nqbdz",
+              "namespace": "kube-system",
+              "creationTimestamp": "2022-10-09T11:51:23Z",
+              "labels": {
+                "k8s-app": "metrics-server",
+                "pod-template-hash": "6db985556d"
+              }
+            },
+            "timestamp": "2022-10-09T11:51:20Z",
+            "containers": [
+              {
+                "name": "metrics-server",
+                "usage": {
+                  "cpu": "1611127n",
+                  "memory": "45320Ki"
+                }
+              }
+            ]
+          }"#;
+
+        let x: PodMetrics = serde_json::from_str(&pod).unwrap();
+        
+
+        println!("{:#?}", x.containers)
+        
     }
 
     #[test]
