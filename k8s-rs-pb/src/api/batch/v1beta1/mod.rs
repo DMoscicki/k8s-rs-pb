@@ -964,11 +964,11 @@ pub struct CronJobStatus {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1beta1.CronJobStatus.active)
     pub active: ::std::vec::Vec<crate::api::core::v1::ObjectReference>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1beta1.CronJobStatus.lastScheduleTime)
     pub lastScheduleTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1beta1.CronJobStatus.lastSuccessfulTime)
     pub lastSuccessfulTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

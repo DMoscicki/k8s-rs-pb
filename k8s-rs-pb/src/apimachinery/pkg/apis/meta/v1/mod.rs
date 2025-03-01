@@ -1741,7 +1741,7 @@ pub struct Condition {
     pub status: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.Condition.observedGeneration)
     pub observedGeneration: ::std::option::Option<i64>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.Condition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<Time>,
@@ -2729,8 +2729,6 @@ impl ::protobuf::reflect::ProtobufValue for DeleteOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
-#[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Duration)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct Duration {
@@ -2738,7 +2736,6 @@ pub struct Duration {
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.Duration.duration)
     pub duration: ::std::option::Option<i64>,
     // special fields
-    #[serde(skip)]
     // @@protoc_insertion_point(special_field:apimachinery.pkg.apis.meta.v1.Duration.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }
@@ -6148,7 +6145,7 @@ pub struct ManagedFieldsEntry {
     pub operation: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.apiVersion)
     pub apiVersion: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.time)
     pub time: ::protobuf::MessageField<Time>,
@@ -6816,11 +6813,11 @@ pub struct ObjectMeta {
     pub resourceVersion: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.ObjectMeta.generation)
     pub generation: ::std::option::Option<i64>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.ObjectMeta.creationTimestamp)
     pub creationTimestamp: ::protobuf::MessageField<Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.ObjectMeta.deletionTimestamp)
     pub deletionTimestamp: ::protobuf::MessageField<Time>,
@@ -10634,8 +10631,6 @@ impl ::protobuf::reflect::ProtobufValue for TableOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
-#[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Time)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct Time {
@@ -10645,7 +10640,6 @@ pub struct Time {
     // @@protoc_insertion_point(field:apimachinery.pkg.apis.meta.v1.Time.nanos)
     pub nanos: ::std::option::Option<i32>,
     // special fields
-    #[serde(skip)]
     // @@protoc_insertion_point(special_field:apimachinery.pkg.apis.meta.v1.Time.special_fields)
     pub special_fields: ::protobuf::SpecialFields,
 }

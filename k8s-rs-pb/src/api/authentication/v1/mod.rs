@@ -1372,7 +1372,7 @@ pub struct TokenRequestStatus {
     // message fields
     // @@protoc_insertion_point(field:api.authentication.v1.TokenRequestStatus.token)
     pub token: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.authentication.v1.TokenRequestStatus.expirationTimestamp)
     pub expirationTimestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

@@ -298,11 +298,11 @@ pub struct CertificateSigningRequestCondition {
     pub reason: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.certificates.v1beta1.CertificateSigningRequestCondition.message)
     pub message: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.certificates.v1beta1.CertificateSigningRequestCondition.lastUpdateTime)
     pub lastUpdateTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.certificates.v1beta1.CertificateSigningRequestCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

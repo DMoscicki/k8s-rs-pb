@@ -10491,7 +10491,7 @@ impl ::protobuf::reflect::ProtobufValue for ContainerState {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct ContainerStateRunning {
     // message fields
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.ContainerStateRunning.startedAt)
     pub startedAt: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -10657,11 +10657,11 @@ pub struct ContainerStateTerminated {
     pub reason: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.ContainerStateTerminated.message)
     pub message: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.ContainerStateTerminated.startedAt)
     pub startedAt: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.ContainerStateTerminated.finishedAt)
     pub finishedAt: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -16752,11 +16752,11 @@ pub struct Event {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.Event.source)
     pub source: ::protobuf::MessageField<EventSource>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.Event.firstTimestamp)
     pub firstTimestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.Event.lastTimestamp)
     pub lastTimestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -16764,7 +16764,7 @@ pub struct Event {
     pub count: ::std::option::Option<i32>,
     // @@protoc_insertion_point(field:api.core.v1.Event.type)
     pub type_: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.Event.eventTime)
     pub eventTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -17817,7 +17817,7 @@ pub struct EventSeries {
     // message fields
     // @@protoc_insertion_point(field:api.core.v1.EventSeries.count)
     pub count: ::std::option::Option<i32>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.EventSeries.lastObservedTime)
     pub lastObservedTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -26956,7 +26956,7 @@ pub struct NamespaceCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.NamespaceCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.NamespaceCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -28568,11 +28568,11 @@ pub struct NodeCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.NodeCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.NodeCondition.lastHeartbeatTime)
     pub lastHeartbeatTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.NodeCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -33969,11 +33969,11 @@ pub struct PersistentVolumeClaimCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.PersistentVolumeClaimCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PersistentVolumeClaimCondition.lastProbeTime)
     pub lastProbeTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PersistentVolumeClaimCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -38175,7 +38175,7 @@ pub struct PersistentVolumeStatus {
     pub message: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.PersistentVolumeStatus.reason)
     pub reason: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PersistentVolumeStatus.lastPhaseTransitionTime)
     pub lastPhaseTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -40066,11 +40066,11 @@ pub struct PodCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.PodCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PodCondition.lastProbeTime)
     pub lastProbeTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PodCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -41667,7 +41667,7 @@ pub struct PodLogOptions {
     pub previous: ::std::option::Option<bool>,
     // @@protoc_insertion_point(field:api.core.v1.PodLogOptions.sinceSeconds)
     pub sinceSeconds: ::std::option::Option<i64>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PodLogOptions.sinceTime)
     pub sinceTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -46037,7 +46037,7 @@ pub struct PodStatus {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PodStatus.podIPs)
     pub podIPs: ::std::vec::Vec<PodIP>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PodStatus.startTime)
     pub startTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -48420,7 +48420,7 @@ pub struct PreferAvoidPodsEntry {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PreferAvoidPodsEntry.podSignature)
     pub podSignature: ::protobuf::MessageField<PodSignature>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.PreferAvoidPodsEntry.evictionTime)
     pub evictionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -51770,7 +51770,7 @@ pub struct ReplicationControllerCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.ReplicationControllerCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.ReplicationControllerCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -63850,7 +63850,7 @@ pub struct Taint {
     pub value: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.core.v1.Taint.effect)
     pub effect: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.core.v1.Taint.timeAdded)
     pub timeAdded: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

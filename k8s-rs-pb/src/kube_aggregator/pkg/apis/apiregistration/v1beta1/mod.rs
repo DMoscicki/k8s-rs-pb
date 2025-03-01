@@ -294,7 +294,7 @@ pub struct APIServiceCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:kube_aggregator.pkg.apis.apiregistration.v1beta1.APIServiceCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:kube_aggregator.pkg.apis.apiregistration.v1beta1.APIServiceCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

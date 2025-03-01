@@ -2319,7 +2319,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttributesClassList {
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct VolumeError {
     // message fields
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.storage.v1alpha1.VolumeError.time)
     pub time: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

@@ -1690,7 +1690,7 @@ pub struct CustomResourceDefinitionCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

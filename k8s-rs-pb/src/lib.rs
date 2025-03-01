@@ -13,35 +13,86 @@ pub struct MessageFieldDef<T>(pub Option<Box<T>>); // dont touch
 
 
 pub mod custom_date {
-    use serde::{Deserialize, Deserializer};
+    use serde::{Deserialize, Deserializer, Serialize, Serializer};
+    use super::apimachinery::pkg::apis::meta::v1::Duration;
+
     use super::apimachinery::pkg::apis::meta::v1::Time as TimePb;
     use chrono::DateTime;
-    
-    pub fn deserialize<'de, D>(deserializer: D) -> Result<::protobuf::MessageField<TimePb>, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let time_as_str = String::deserialize(deserializer).unwrap_or_default();
-        match DateTime::parse_from_rfc3339(&time_as_str) {
-            Ok(val) => {
-                let secs = val.timestamp();
-                let nanos = val.timestamp_subsec_nanos();
 
-                let mut new_time = TimePb::new();
+    impl Serialize for Duration {
+        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+            where
+                S: Serializer {
+            serializer.serialize_i64(self.duration())
+        }
+    }
 
-                new_time.set_seconds(secs);
-                new_time.set_nanos(nanos as i32);
+    impl <'de> Deserialize <'de> for Duration {
+        fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+            where
+                D: Deserializer<'de> {
+            let value = String::deserialize(deserializer).unwrap();
+
+            let (d, _) = value.split_once("s").unwrap();
+
+            match d.parse::<i64>() {
+                Ok(val) => {
+                    let mut dur = Duration::new();
+
+                    dur.set_duration(val);
+        
+                    Ok(dur)
+                },
+                Err(e) => {
+                    if e.to_string().contains("invalid digit") {
+                        let mut dur = Duration::new();
+
+                        let val = d.parse::<f64>().unwrap();
+
+                        dur.set_duration(val as i64);
             
-                let fiex = ::protobuf::MessageField::some(new_time);
-                Ok(fiex)
-            },
-            Err(err) => {
-                eprintln!("Parse error: {}", err);
+                        return Ok(dur);
+                    }
+                    Err(serde::de::Error::custom(e.to_string()))
+                }
+            }
+        }
+    }
 
-                let def_time = TimePb::default();
+    impl Serialize for TimePb {
+        fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> 
+            where S: Serializer {
+            let value = DateTime::from_timestamp(self.seconds(), self.nanos() as u32).unwrap();
 
-                Ok(protobuf::MessageField::some(def_time))
-            },
+            serializer.serialize_str(&value.to_rfc3339())
+        }
+    }
+
+    impl <'de> Deserialize <'de> for TimePb {
+        fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+            where
+                D: Deserializer<'de> {
+                let time_as_str = String::deserialize(deserializer).unwrap_or_default();
+                match DateTime::parse_from_rfc3339(&time_as_str) {
+                    Ok(val) => {
+                        let secs = val.timestamp();
+                        let nanos = val.timestamp_subsec_nanos();
+
+                        let mut new_time = TimePb::new();
+
+                        new_time.set_seconds(secs);
+                        new_time.set_nanos(nanos as i32);
+                    
+                        Ok(new_time)
+                    },
+                    Err(err) => {
+                        eprintln!("parse error: {}", err);
+
+                        let def_time = TimePb::default();
+
+                        Ok(def_time)
+                    },
+                }
         }
     }
 }
@@ -300,36 +351,14 @@ mod tests {
 
     #[test]
     fn succes_metrics() {
-        let pod = r#"{
-            "kind": "PodMetrics",
-            "apiVersion": "metrics.k8s.io/v1beta1",
-            "metadata": {
-              "name": "metrics-server-6db985556d-nqbdz",
-              "namespace": "kube-system",
-              "creationTimestamp": "2022-10-09T11:51:23Z",
-              "labels": {
-                "k8s-app": "metrics-server",
-                "pod-template-hash": "6db985556d"
-              }
-            },
-            "timestamp": "2022-10-09T11:51:20Z",
-            "containers": [
-              {
-                "name": "metrics-server",
-                "usage": {
-                  "cpu": "",
-                  "memory": "45320Ki"
-                }
-              }
-            ]
-          }"#;
+        let pod = fs::read_to_string("testdata/etcd_metrics.json").unwrap();
 
         let mut x: PodMetrics = serde_json::from_str(&pod).unwrap();
         let binding = x.containers[0].take_usage();
         let cpu = binding.get("cpu").unwrap_or_default();
         let mem = binding.get("memory").unwrap_or_default();
 
-        assert_eq!(String::from("0"), *cpu.string.clone().unwrap_or_default());
+        assert_eq!(String::from("0.01920"), *cpu.string.clone().unwrap_or_default());
         assert_eq!(String::from("46.4MB"), *mem.string.clone().unwrap_or_default());
     }
 

@@ -964,11 +964,11 @@ pub struct CronJobStatus {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.CronJobStatus.active)
     pub active: ::std::vec::Vec<crate::api::core::v1::ObjectReference>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.CronJobStatus.lastScheduleTime)
     pub lastScheduleTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.CronJobStatus.lastSuccessfulTime)
     pub lastSuccessfulTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -1479,11 +1479,11 @@ pub struct JobCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.batch.v1.JobCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.JobCondition.lastProbeTime)
     pub lastProbeTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.JobCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -2912,11 +2912,11 @@ pub struct JobStatus {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.JobStatus.conditions)
     pub conditions: ::std::vec::Vec<JobCondition>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.JobStatus.startTime)
     pub startTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.batch.v1.JobStatus.completionTime)
     pub completionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

@@ -258,7 +258,7 @@ pub struct NodeMetrics {
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.metrics.v1alpha1.NodeMetrics.metadata)
     pub metadata: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::ObjectMeta>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.metrics.v1alpha1.NodeMetrics.timestamp)
     pub timestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -782,7 +782,7 @@ pub struct PodMetrics {
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.metrics.v1alpha1.PodMetrics.metadata)
     pub metadata: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::ObjectMeta>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:metrics.pkg.apis.metrics.v1alpha1.PodMetrics.timestamp)
     pub timestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

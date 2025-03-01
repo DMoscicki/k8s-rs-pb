@@ -599,7 +599,7 @@ pub struct StorageVersionCondition {
     pub status: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.apiserverinternal.v1alpha1.StorageVersionCondition.observedGeneration)
     pub observedGeneration: ::std::option::Option<i64>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apiserverinternal.v1alpha1.StorageVersionCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

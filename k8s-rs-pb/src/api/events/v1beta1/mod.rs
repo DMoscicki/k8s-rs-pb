@@ -34,7 +34,7 @@ pub struct Event {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.Event.metadata)
     pub metadata: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::ObjectMeta>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.Event.eventTime)
     pub eventTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -66,11 +66,11 @@ pub struct Event {
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.Event.deprecatedSource)
     pub deprecatedSource: ::protobuf::MessageField<crate::api::core::v1::EventSource>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.Event.deprecatedFirstTimestamp)
     pub deprecatedFirstTimestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.Event.deprecatedLastTimestamp)
     pub deprecatedLastTimestamp: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -1111,7 +1111,7 @@ pub struct EventSeries {
     // message fields
     // @@protoc_insertion_point(field:api.events.v1beta1.EventSeries.count)
     pub count: ::std::option::Option<i32>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.events.v1beta1.EventSeries.lastObservedTime)
     pub lastObservedTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,

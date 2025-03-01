@@ -743,7 +743,7 @@ pub struct DaemonSetCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.apps.v1beta2.DaemonSetCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta2.DaemonSetCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -2611,11 +2611,11 @@ pub struct DeploymentCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.apps.v1beta2.DeploymentCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta2.DeploymentCondition.lastUpdateTime)
     pub lastUpdateTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta2.DeploymentCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -4567,7 +4567,7 @@ pub struct ReplicaSetCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.apps.v1beta2.ReplicaSetCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta2.ReplicaSetCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
@@ -7299,7 +7299,7 @@ pub struct StatefulSetCondition {
     pub type_: ::std::option::Option<::std::string::String>,
     // @@protoc_insertion_point(field:api.apps.v1beta2.StatefulSetCondition.status)
     pub status: ::std::option::Option<::std::string::String>,
-    #[serde(with = "crate::custom_date")]
+    #[serde(with = "crate::MessageFieldDef")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.apps.v1beta2.StatefulSetCondition.lastTransitionTime)
     pub lastTransitionTime: ::protobuf::MessageField<crate::apimachinery::pkg::apis::meta::v1::Time>,
