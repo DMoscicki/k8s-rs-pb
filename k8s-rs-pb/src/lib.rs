@@ -200,7 +200,7 @@ pub mod quantity_parse {
             let (v, _) = value.split_once("u").unwrap();
             format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
         } else {
-            value.parse::<f64>().unwrap().to_string()
+            value.parse::<f64>().unwrap_or_default().to_string()
         }
     }
 
@@ -317,18 +317,20 @@ mod tests {
               {
                 "name": "metrics-server",
                 "usage": {
-                  "cpu": "1611127n",
+                  "cpu": "",
                   "memory": "45320Ki"
                 }
               }
             ]
           }"#;
 
-        let x: PodMetrics = serde_json::from_str(&pod).unwrap();
-        
+        let mut x: PodMetrics = serde_json::from_str(&pod).unwrap();
+        let binding = x.containers[0].take_usage();
+        let cpu = binding.get("cpu").unwrap_or_default();
+        let mem = binding.get("memory").unwrap_or_default();
 
-        println!("{:#?}", x.containers)
-        
+        assert_eq!(String::from("0"), *cpu.string.clone().unwrap_or_default());
+        assert_eq!(String::from("46.4MB"), *mem.string.clone().unwrap_or_default());
     }
 
     #[test]
