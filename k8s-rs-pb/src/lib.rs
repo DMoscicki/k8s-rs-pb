@@ -225,57 +225,57 @@ pub mod quantity_parse {
                 D: Deserializer<'de> {
                     let mut quantity = Quantity::new();
                     let inc_value = String::deserialize(deserializer).unwrap_or_default();
-                    quantity.set_string(convert_incoming_quantity(&inc_value));
+                    quantity.set_string(inc_value);
 
                     Ok(quantity)
         }
     }
 
-    fn convert_incoming_quantity(value: &str) -> String {
-        if value.contains("Ki") {
-            let (v, _) = value.split_once("Ki").unwrap();
-            format!("{:.1}MB", kib_to_mb(v.parse::<f64>().unwrap()))
-        } else if value.contains("Mi") {
-            let (v, _) = value.split_once("Mi").unwrap();
-            format!("{:.1}MB", mib_to_mb(v.parse::<f64>().unwrap()))
-        } else if value.contains("Gi") {
-            let (v, _) = value.split_once("Gi").unwrap();
-            format!("{:.1}GB", gib_to_gb(v.parse::<f64>().unwrap()))
-        } else if value.contains("n") {
-            let (v, _) = value.split_once("n").unwrap();
-            format!("{:.5}", from_nano_cpu(v.parse::<f64>().unwrap()))
-        } else if value.contains("m") {
-            let (v, _) = value.split_once("m").unwrap();
-            format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
-        } else if value.contains("u") {
-            let (v, _) = value.split_once("u").unwrap();
-            format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
-        } else {
-            value.parse::<f64>().unwrap_or_default().to_string()
-        }
-    }
+    // fn convert_incoming_quantity(value: &str) -> String {
+    //     if value.contains("Ki") {
+    //         let (v, _) = value.split_once("Ki").unwrap();
+    //         format!("{:.1}MB", kib_to_mb(v.parse::<f64>().unwrap()))
+    //     } else if value.contains("Mi") {
+    //         let (v, _) = value.split_once("Mi").unwrap();
+    //         format!("{:.1}MB", mib_to_mb(v.parse::<f64>().unwrap()))
+    //     } else if value.contains("Gi") {
+    //         let (v, _) = value.split_once("Gi").unwrap();
+    //         format!("{:.1}GB", gib_to_gb(v.parse::<f64>().unwrap()))
+    //     } else if value.contains("n") {
+    //         let (v, _) = value.split_once("n").unwrap();
+    //         format!("{:.5}", from_nano_cpu(v.parse::<f64>().unwrap()))
+    //     } else if value.contains("m") {
+    //         let (v, _) = value.split_once("m").unwrap();
+    //         format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
+    //     } else if value.contains("u") {
+    //         let (v, _) = value.split_once("u").unwrap();
+    //         format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
+    //     } else {
+    //         value.parse::<f64>().unwrap_or_default().to_string()
+    //     }
+    // }
 
-    fn from_nano_cpu(v: f64) -> f64 {
-        v / 1_000_000_000.0
-    }
+    // fn from_nano_cpu(v: f64) -> f64 {
+    //     v / 1_000_000_000.0
+    // }
     
-    fn from_mega_cpu(v: f64) -> f64 {
-        v / 1_000_000.0
-    }
+    // fn from_mega_cpu(v: f64) -> f64 {
+    //     v / 1_000_000.0
+    // }
 
-    fn kib_to_mb(val: f64) -> f64 {
-        (val * 1024.0) / 1_000_000.0
-    }
+    // fn kib_to_mb(val: f64) -> f64 {
+    //     (val * 1024.0) / 1_000_000.0
+    // }
     
-    fn mib_to_mb(val: f64) -> f64 {
-        // 1 MiB = 1.048576 MB
-        val * 1.048576
-    }
+    // fn mib_to_mb(val: f64) -> f64 {
+    //     // 1 MiB = 1.048576 MB
+    //     val * 1.048576
+    // }
     
-    fn gib_to_gb(val: f64) -> f64 {
-        // 1 GiB = 1.073741824 GB
-        val * 1.073741824
-    }
+    // fn gib_to_gb(val: f64) -> f64 {
+    //     // 1 GiB = 1.073741824 GB
+    //     val * 1.073741824
+    // }
 }
 
 /// Converter pub
@@ -353,22 +353,14 @@ mod tests {
     fn success_metrics_node() {
         let node = fs::read_to_string("testdata/node_metrics.json").unwrap();
 
-        let nd: NodeMetrics = serde_json::from_str(&node).unwrap();
-
-        println!("{:#?}", nd)
+        let _nd: NodeMetrics = serde_json::from_str(&node).unwrap();
     }
 
     #[test]
     fn succes_metrics_pod() {
         let pod = fs::read_to_string("testdata/etcd_metrics.json").unwrap();
 
-        let mut x: PodMetrics = serde_json::from_str(&pod).unwrap();
-        let binding = x.containers[0].take_usage();
-        let cpu = binding.get("cpu").unwrap_or_default();
-        let mem = binding.get("memory").unwrap_or_default();
-
-        assert_eq!(String::from("0.01920"), *cpu.string.clone().unwrap_or_default());
-        assert_eq!(String::from("46.4MB"), *mem.string.clone().unwrap_or_default());
+        let _x: PodMetrics = serde_json::from_str(&pod).unwrap();
     }
 
     #[test]
