@@ -5,6 +5,9 @@ This package is experimental and I tried to convert answer from k8s-openapi (kub
 In the future I will add Serialize to custom_date.
 At this time i only need the Deserialize (i don't like to work with JSON).
 
+You can generate a protobufs for your version of Kubernetes.
+Just change `KUBERNETES_VERSION` in `justfile`.
+
 ## Example
 
 ```

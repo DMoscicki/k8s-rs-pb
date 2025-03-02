@@ -223,59 +223,80 @@ pub mod quantity_parse {
         fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
             where
                 D: Deserializer<'de> {
-                    let mut quantity = Quantity::new();
-                    let inc_value = String::deserialize(deserializer).unwrap_or_default();
-                    quantity.set_string(inc_value);
+                    let subtype = vec!["u", "m", "n", "Mi", "Ki", "Gi"];
 
-                    Ok(quantity)
+                    let inc_value = String::deserialize(deserializer).unwrap();
+
+                    let mut quantity = Quantity::new();
+
+                    if containe_subtype(&inc_value, subtype) {
+                        quantity.set_string(convert_incoming_quantity(&inc_value));
+                        Ok(quantity)
+                    } else {
+                        quantity.set_string(inc_value);
+                        Ok(quantity)
+                    }
         }
     }
 
-    // fn convert_incoming_quantity(value: &str) -> String {
-    //     if value.contains("Ki") {
-    //         let (v, _) = value.split_once("Ki").unwrap();
-    //         format!("{:.1}MB", kib_to_mb(v.parse::<f64>().unwrap()))
-    //     } else if value.contains("Mi") {
-    //         let (v, _) = value.split_once("Mi").unwrap();
-    //         format!("{:.1}MB", mib_to_mb(v.parse::<f64>().unwrap()))
-    //     } else if value.contains("Gi") {
-    //         let (v, _) = value.split_once("Gi").unwrap();
-    //         format!("{:.1}GB", gib_to_gb(v.parse::<f64>().unwrap()))
-    //     } else if value.contains("n") {
-    //         let (v, _) = value.split_once("n").unwrap();
-    //         format!("{:.5}", from_nano_cpu(v.parse::<f64>().unwrap()))
-    //     } else if value.contains("m") {
-    //         let (v, _) = value.split_once("m").unwrap();
-    //         format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
-    //     } else if value.contains("u") {
-    //         let (v, _) = value.split_once("u").unwrap();
-    //         format!("{:.5}", from_mega_cpu(v.parse::<f64>().unwrap()))
-    //     } else {
-    //         value.parse::<f64>().unwrap_or_default().to_string()
-    //     }
-    // }
+    fn containe_subtype(value: &str, subtypes: Vec<&str>) -> bool {
+        subtypes.iter().any(|&substring| value.contains(substring))
+    }
 
-    // fn from_nano_cpu(v: f64) -> f64 {
-    //     v / 1_000_000_000.0
-    // }
-    
-    // fn from_mega_cpu(v: f64) -> f64 {
-    //     v / 1_000_000.0
-    // }
+    fn convert_incoming_quantity(value: &str) -> String {
+        if value.contains("Ki") {
+            let (v, _) = value.split_once("Ki").unwrap();
+            return format!("{:.1}MB", kib_to_mb(v.parse::<f64>().unwrap()))
+        }
+        if value.contains("Mi") {
+            let (v, _) = value.split_once("Mi").unwrap();
+            return format!("{:.1}MB", mib_to_mb(v.parse::<f64>().unwrap()))
+        }
+        if value.contains("Gi") {
+            let (v, _) = value.split_once("Gi").unwrap();
+            return format!("{:.1}GB", gib_to_gb(v.parse::<f64>().unwrap()))
+        } 
+        if value.contains("n") {
+            let (v, _) = value.split_once("n").unwrap();
+            return format!("{:.5}", from_nano_cpu(v.parse::<f64>().unwrap()))
+        }
+        if value.contains("m") {
+            let (v, _) = value.split_once("m").unwrap();
+            return format!("{:.5}", from_micro_cpu(v.parse::<f64>().unwrap()))
+        }
+        if value.contains("u") {
+            let (v, _) = value.split_once("u").unwrap();
+            return format!("{:.5}", from_milli_cpu(v.parse::<f64>().unwrap()))
+        }
 
-    // fn kib_to_mb(val: f64) -> f64 {
-    //     (val * 1024.0) / 1_000_000.0
-    // }
+        value.parse::<f64>().unwrap().to_string()
+    }
+
+    fn from_nano_cpu(v: f64) -> f64 {
+        v / 1_000_000_000.0
+    }
     
-    // fn mib_to_mb(val: f64) -> f64 {
-    //     // 1 MiB = 1.048576 MB
-    //     val * 1.048576
-    // }
+    fn from_micro_cpu(v: f64) -> f64 {
+        v / 1_000_000.0
+    }
+
+    fn from_milli_cpu(v: f64) -> f64 {
+        v / 1_000.0
+    }
+
+    fn kib_to_mb(val: f64) -> f64 {
+        (val * 1024.0) / 1_000_000.0
+    }
     
-    // fn gib_to_gb(val: f64) -> f64 {
-    //     // 1 GiB = 1.073741824 GB
-    //     val * 1.073741824
-    // }
+    fn mib_to_mb(val: f64) -> f64 {
+        // 1 MiB = 1.048576 MB
+        val * 1.048576
+    }
+    
+    fn gib_to_gb(val: f64) -> f64 {
+        // 1 GiB = 1.073741824 GB
+        val * 1.073741824
+    }
 }
 
 /// Converter pub
