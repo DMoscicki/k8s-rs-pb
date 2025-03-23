@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.Endpoint)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -492,7 +492,7 @@ impl ::protobuf::reflect::ProtobufValue for Endpoint {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.EndpointConditions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -710,7 +710,7 @@ impl ::protobuf::reflect::ProtobufValue for EndpointConditions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.EndpointHints)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -862,7 +862,7 @@ impl ::protobuf::reflect::ProtobufValue for EndpointHints {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.EndpointPort)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1168,7 +1168,7 @@ impl ::protobuf::reflect::ProtobufValue for EndpointPort {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.EndpointSlice)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1470,7 +1470,7 @@ impl ::protobuf::reflect::ProtobufValue for EndpointSlice {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.EndpointSliceList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1673,7 +1673,7 @@ impl ::protobuf::reflect::ProtobufValue for EndpointSliceList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.discovery.v1beta1.ForZone)
 #[derive(PartialEq,Clone,Default,Debug)]

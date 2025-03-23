@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.CronJob)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJob {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.CronJobList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -487,7 +487,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.CronJobSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -955,7 +955,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.CronJobStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1209,7 +1209,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.Job)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1469,7 +1469,7 @@ impl ::protobuf::reflect::ProtobufValue for Job {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.JobCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1894,7 +1894,7 @@ impl ::protobuf::reflect::ProtobufValue for JobCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.JobList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2097,7 +2097,7 @@ impl ::protobuf::reflect::ProtobufValue for JobList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.JobSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2903,7 +2903,7 @@ impl ::protobuf::reflect::ProtobufValue for JobSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.JobStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3501,7 +3501,7 @@ impl ::protobuf::reflect::ProtobufValue for JobStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.JobTemplateSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3710,7 +3710,7 @@ impl ::protobuf::reflect::ProtobufValue for JobTemplateSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.PodFailurePolicy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3862,7 +3862,7 @@ impl ::protobuf::reflect::ProtobufValue for PodFailurePolicy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.PodFailurePolicyOnExitCodesRequirement)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4124,7 +4124,7 @@ impl ::protobuf::reflect::ProtobufValue for PodFailurePolicyOnExitCodesRequireme
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.PodFailurePolicyOnPodConditionsPattern)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4339,7 +4339,7 @@ impl ::protobuf::reflect::ProtobufValue for PodFailurePolicyOnPodConditionsPatte
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.PodFailurePolicyRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4596,7 +4596,7 @@ impl ::protobuf::reflect::ProtobufValue for PodFailurePolicyRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.SuccessPolicy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4748,7 +4748,7 @@ impl ::protobuf::reflect::ProtobufValue for SuccessPolicy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.SuccessPolicyRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4946,7 +4946,7 @@ impl ::protobuf::reflect::ProtobufValue for SuccessPolicyRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1.UncountedTerminatedPods)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.AggregationRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -176,7 +176,7 @@ impl ::protobuf::reflect::ProtobufValue for AggregationRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.ClusterRole)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -430,7 +430,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterRole {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.ClusterRoleBinding)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -684,7 +684,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterRoleBinding {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.ClusterRoleBindingList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -887,7 +887,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterRoleBindingList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.ClusterRoleList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1090,7 +1090,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterRoleList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.PolicyRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1417,7 +1417,7 @@ impl ::protobuf::reflect::ProtobufValue for PolicyRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.Role)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1620,7 +1620,7 @@ impl ::protobuf::reflect::ProtobufValue for Role {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.RoleBinding)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1874,7 +1874,7 @@ impl ::protobuf::reflect::ProtobufValue for RoleBinding {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.RoleBindingList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2077,7 +2077,7 @@ impl ::protobuf::reflect::ProtobufValue for RoleBindingList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.RoleList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2280,7 +2280,7 @@ impl ::protobuf::reflect::ProtobufValue for RoleList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.RoleRef)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2549,7 +2549,7 @@ impl ::protobuf::reflect::ProtobufValue for RoleRef {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.rbac.v1.Subject)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.APIService)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for APIService {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.APIServiceCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -658,7 +658,7 @@ impl ::protobuf::reflect::ProtobufValue for APIServiceCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.APIServiceList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -861,7 +861,7 @@ impl ::protobuf::reflect::ProtobufValue for APIServiceList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.APIServiceSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1292,7 +1292,7 @@ impl ::protobuf::reflect::ProtobufValue for APIServiceSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.APIServiceStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1444,7 +1444,7 @@ impl ::protobuf::reflect::ProtobufValue for APIServiceStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:kube_aggregator.pkg.apis.apiregistration.v1.ServiceReference)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.ExemptPriorityLevelConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -205,7 +205,7 @@ impl ::protobuf::reflect::ProtobufValue for ExemptPriorityLevelConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowDistinguisherMethod)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -366,7 +366,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowDistinguisherMethod {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowSchema)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -626,7 +626,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowSchema {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowSchemaCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1000,7 +1000,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowSchemaCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowSchemaList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1203,7 +1203,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowSchemaList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowSchemaSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1494,7 +1494,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowSchemaSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.FlowSchemaStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1646,7 +1646,7 @@ impl ::protobuf::reflect::ProtobufValue for FlowSchemaStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.GroupSubject)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1807,7 +1807,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupSubject {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.LimitResponse)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2019,7 +2019,7 @@ impl ::protobuf::reflect::ProtobufValue for LimitResponse {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.LimitedPriorityLevelConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2288,7 +2288,7 @@ impl ::protobuf::reflect::ProtobufValue for LimitedPriorityLevelConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.NonResourcePolicyRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2483,7 +2483,7 @@ impl ::protobuf::reflect::ProtobufValue for NonResourcePolicyRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PolicyRulesWithSubjects)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2725,7 +2725,7 @@ impl ::protobuf::reflect::ProtobufValue for PolicyRulesWithSubjects {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2985,7 +2985,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfigurationCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3359,7 +3359,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfigurationCondition 
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfigurationList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3562,7 +3562,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfigurationList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfigurationReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3723,7 +3723,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfigurationReference 
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfigurationSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3986,7 +3986,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfigurationSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.PriorityLevelConfigurationStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4138,7 +4138,7 @@ impl ::protobuf::reflect::ProtobufValue for PriorityLevelConfigurationStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.QueuingConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4356,7 +4356,7 @@ impl ::protobuf::reflect::ProtobufValue for QueuingConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.ResourcePolicyRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4676,7 +4676,7 @@ impl ::protobuf::reflect::ProtobufValue for ResourcePolicyRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.ServiceAccountSubject)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4891,7 +4891,7 @@ impl ::protobuf::reflect::ProtobufValue for ServiceAccountSubject {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.Subject)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5205,7 +5205,7 @@ impl ::protobuf::reflect::ProtobufValue for Subject {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.flowcontrol.v1beta2.UserSubject)
 #[derive(PartialEq,Clone,Default,Debug)]

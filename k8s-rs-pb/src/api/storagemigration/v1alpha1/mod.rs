@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.GroupVersionResource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -293,7 +293,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupVersionResource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.MigrationCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -667,7 +667,7 @@ impl ::protobuf::reflect::ProtobufValue for MigrationCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.StorageVersionMigration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -927,7 +927,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionMigration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.StorageVersionMigrationList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1130,7 +1130,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionMigrationList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.StorageVersionMigrationSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1342,7 +1342,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionMigrationSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storagemigration.v1alpha1.StorageVersionMigrationStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

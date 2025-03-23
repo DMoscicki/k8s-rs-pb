@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.policy.v1beta1.Eviction)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -233,7 +233,7 @@ impl ::protobuf::reflect::ProtobufValue for Eviction {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.policy.v1beta1.PodDisruptionBudget)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -493,7 +493,7 @@ impl ::protobuf::reflect::ProtobufValue for PodDisruptionBudget {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.policy.v1beta1.PodDisruptionBudgetList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -696,7 +696,7 @@ impl ::protobuf::reflect::ProtobufValue for PodDisruptionBudgetList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.policy.v1beta1.PodDisruptionBudgetSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1010,7 +1010,7 @@ impl ::protobuf::reflect::ProtobufValue for PodDisruptionBudgetSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.policy.v1beta1.PodDisruptionBudgetStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

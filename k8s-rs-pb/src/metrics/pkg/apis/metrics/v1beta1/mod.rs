@@ -248,7 +248,7 @@ impl ::protobuf::reflect::ProtobufValue for ContainerMetrics {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.metrics.v1beta1.NodeMetrics)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -569,7 +569,7 @@ impl ::protobuf::reflect::ProtobufValue for NodeMetrics {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.metrics.v1beta1.NodeMetricsList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -772,7 +772,7 @@ impl ::protobuf::reflect::ProtobufValue for NodeMetricsList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.metrics.v1beta1.PodMetrics)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1077,7 +1077,7 @@ impl ::protobuf::reflect::ProtobufValue for PodMetrics {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.metrics.v1beta1.PodMetricsList)
 #[derive(PartialEq,Clone,Default,Debug)]

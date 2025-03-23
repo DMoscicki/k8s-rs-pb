@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.custom_metrics.v1beta1.MetricListOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -239,7 +239,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricListOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.custom_metrics.v1beta1.MetricValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -641,7 +641,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.custom_metrics.v1beta1.MetricValueList)
 #[derive(PartialEq,Clone,Default,Debug)]

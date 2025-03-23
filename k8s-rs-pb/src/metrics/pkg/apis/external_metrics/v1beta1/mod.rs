@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.external_metrics.v1beta1.ExternalMetricValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -382,7 +382,7 @@ impl ::protobuf::reflect::ProtobufValue for ExternalMetricValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:metrics.pkg.apis.external_metrics.v1beta1.ExternalMetricValueList)
 #[derive(PartialEq,Clone,Default,Debug)]

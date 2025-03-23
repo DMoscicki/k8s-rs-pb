@@ -19,7 +19,7 @@ impl CustomizeCallback for GenStruct {
             if message.name() == "ContainerMetrics" {
                 return Customize::default().before("#[derive(::serde::Deserialize, ::serde::Serialize)]\n#[serde(rename_all = \"snake_case\")]");
             }
-            return Customize::default().before("#[derive(::serde::Deserialize)]\n#[serde(rename_all = \"snake_case\")]");
+            return Customize::default().before("#[derive(::serde::Deserialize, ::serde::Serialize)]\n#[serde(rename_all = \"snake_case\")]");
         }
 
         Customize::default()
@@ -27,8 +27,12 @@ impl CustomizeCallback for GenStruct {
 
     fn field(&self, field: &FieldDescriptor) -> Customize {
 
+        // if BMAP_FIELDS.contains(&field.proto().name()) && field.is_map() {
+        //     return Customize::default().before("#[serde(with = \"crate::quantity_parse\")]\n#[serde(default)]")
+        // }
+        
         if BMAP_FIELDS.contains(&field.proto().name()) && field.is_map() {
-            return Customize::default().before("#[serde(with = \"crate::quantity_parse\")]\n#[serde(default)]")
+            return Customize::default().before("#[serde(default)]")
         }
 
         if field.is_repeated() {
@@ -36,7 +40,8 @@ impl CustomizeCallback for GenStruct {
         }
 
         if field.proto().type_name() == ".apimachinery.pkg.util.intstr.IntOrString" {
-            return Customize::default().before("#[serde(with = \"crate::intorstr\")]\n#[serde(default)]");
+            return Customize::default()
+                .before("#[serde(with = \"crate::intorstr\")]\n#[serde(default)]");
         }
 
         if field.proto().type_() == Type::TYPE_MESSAGE && field.is_singular() {
@@ -47,6 +52,7 @@ impl CustomizeCallback for GenStruct {
 
             return Customize::default().before("#[serde(with = \"crate::MessageFieldDef\")]\n#[serde(default)]")
         }
+
         if field.is_map() {
             return Customize::default().before("#[serde(default)]");
         } 

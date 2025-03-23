@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.testapigroup.v1.Carp)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for Carp {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.testapigroup.v1.CarpCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -709,7 +709,7 @@ impl ::protobuf::reflect::ProtobufValue for CarpCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.testapigroup.v1.CarpList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -912,7 +912,7 @@ impl ::protobuf::reflect::ProtobufValue for CarpList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.testapigroup.v1.CarpSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1632,7 +1632,7 @@ impl ::protobuf::reflect::ProtobufValue for CarpSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.testapigroup.v1.CarpStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

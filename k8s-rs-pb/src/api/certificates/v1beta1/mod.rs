@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.CertificateSigningRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for CertificateSigningRequest {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.CertificateSigningRequestCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -709,7 +709,7 @@ impl ::protobuf::reflect::ProtobufValue for CertificateSigningRequestCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.CertificateSigningRequestList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -912,7 +912,7 @@ impl ::protobuf::reflect::ProtobufValue for CertificateSigningRequestList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.CertificateSigningRequestSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1417,7 +1417,7 @@ impl ::protobuf::reflect::ProtobufValue for CertificateSigningRequestSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.CertificateSigningRequestStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1623,7 +1623,7 @@ impl ::protobuf::reflect::ProtobufValue for CertificateSigningRequestStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1beta1.ExtraValue)
 #[derive(PartialEq,Clone,Default,Debug)]

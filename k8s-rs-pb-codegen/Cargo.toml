@@ -7,5 +7,5 @@ license = "MIT"
 publish = false
 
 [dependencies]
-protobuf-codegen = "3.7.1"
-protobuf = "3.7.1"
+protobuf-codegen = "3.7.2"
+protobuf = "3.7.2"

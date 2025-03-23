@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSIDriver)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -233,7 +233,7 @@ impl ::protobuf::reflect::ProtobufValue for CSIDriver {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSIDriverList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -436,7 +436,7 @@ impl ::protobuf::reflect::ProtobufValue for CSIDriverList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSIDriverSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -871,7 +871,7 @@ impl ::protobuf::reflect::ProtobufValue for CSIDriverSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSINode)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1080,7 +1080,7 @@ impl ::protobuf::reflect::ProtobufValue for CSINode {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSINodeDriver)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1390,7 +1390,7 @@ impl ::protobuf::reflect::ProtobufValue for CSINodeDriver {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSINodeList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1593,7 +1593,7 @@ impl ::protobuf::reflect::ProtobufValue for CSINodeList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSINodeSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1745,7 +1745,7 @@ impl ::protobuf::reflect::ProtobufValue for CSINodeSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSIStorageCapacity)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2110,7 +2110,7 @@ impl ::protobuf::reflect::ProtobufValue for CSIStorageCapacity {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.CSIStorageCapacityList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2313,7 +2313,7 @@ impl ::protobuf::reflect::ProtobufValue for CSIStorageCapacityList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.StorageClass)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2814,7 +2814,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageClass {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.StorageClassList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3017,7 +3017,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageClassList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.TokenRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3215,7 +3215,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenRequest {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeAttachment)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3475,7 +3475,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttachment {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeAttachmentList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3678,7 +3678,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttachmentList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeAttachmentSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3890,7 +3890,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttachmentSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeAttachmentSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4156,7 +4156,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttachmentSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeAttachmentStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4461,7 +4461,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeAttachmentStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeError)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4673,7 +4673,7 @@ impl ::protobuf::reflect::ProtobufValue for VolumeError {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.storage.v1beta1.VolumeNodeResources)
 #[derive(PartialEq,Clone,Default,Debug)]

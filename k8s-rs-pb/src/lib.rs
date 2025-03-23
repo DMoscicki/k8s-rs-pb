@@ -64,7 +64,7 @@ pub mod custom_date {
             where S: Serializer {
             let value = DateTime::from_timestamp(self.seconds(), self.nanos() as u32).unwrap();
 
-            serializer.serialize_str(&value.to_rfc3339())
+            serializer.serialize_str(&value.to_rfc3339_opts(chrono::SecondsFormat::Secs, true))
         }
     }
 
@@ -99,9 +99,27 @@ pub mod custom_date {
 
 pub mod intorstr {
     use std::fmt;
+    use serde::{de::Visitor, Deserializer, Serializer};
     use protobuf::MessageField;
-    use serde::{de::Visitor, Deserializer};
     use super::apimachinery::pkg::util::intstr::IntOrString;
+
+    pub fn serialize<S>(value: &MessageField<IntOrString>, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        match value.as_ref() {
+            Some(int_or_str) => {
+                if int_or_str.has_intVal() {
+                    serializer.serialize_i32(int_or_str.intVal())
+                } else if int_or_str.has_strVal() {
+                    serializer.serialize_str(int_or_str.strVal())
+                } else {
+                    serializer.serialize_none()
+                }
+            }
+            None => serializer.serialize_none(),
+        }
+    }
     
     pub fn deserialize<'de, D>(deserializer: D) -> Result<::protobuf::MessageField<IntOrString>, D::Error>
     where
@@ -109,74 +127,38 @@ pub mod intorstr {
     {
         struct IntOrStringVisitor;
 
-        impl <'de> Visitor<'de> for IntOrStringVisitor {
-
+        impl<'de> Visitor<'de> for IntOrStringVisitor {
             type Value = MessageField<IntOrString>;
 
-            fn expecting(&self, formatter: &mut fmt::Formatter<'_>) -> std::fmt::Result {
+            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
                 formatter.write_str("int or string")
             }
 
             fn visit_i64<E>(self, v: i64) -> Result<Self::Value, E>
-                where
-                    E: serde::de::Error,
-            {
-                let mut int_or_str = IntOrString::new();
-                int_or_str.set_type(v);
-
-                let mes = MessageField::some(int_or_str);
-
-                Ok(mes)  
-                
-            }
-
-            fn visit_i32<E>(self, v: i32) -> Result<Self::Value, E>
-                where
-                    E: serde::de::Error,
-            {
-                let mut int_or_str = IntOrString::new();
-                int_or_str.set_intVal(v);
-
-                let mes = MessageField::some(int_or_str);
-
-                Ok(mes)  
-            }
-
-            // GitHub issue https://github.com/serde-rs/serde/issues/1162#issuecomment-367955753
-            fn visit_u64<E>(self, v: u64) -> Result<Self::Value, E>
-                where
-                    E: serde::de::Error,
-            {
-                let mut int_or_str = IntOrString::new();
-                int_or_str.set_type(v as i64);
-
-                let mes = MessageField::some(int_or_str);
-
-                Ok(mes)        
-            }
-            
-            fn visit_u32<E>(self, v: u32) -> Result<Self::Value, E>
-                where
-                    E: serde::de::Error,
+            where
+                E: serde::de::Error,
             {
                 let mut int_or_str = IntOrString::new();
                 int_or_str.set_intVal(v as i32);
+                Ok(MessageField::some(int_or_str))
+            }
 
-                let mes = MessageField::some(int_or_str);
-
-                Ok(mes)
+            fn visit_u64<E>(self, v: u64) -> Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                let mut int_or_str = IntOrString::new();
+                int_or_str.set_intVal(v as i32);
+                Ok(MessageField::some(int_or_str))
             }
 
             fn visit_str<E>(self, v: &str) -> Result<Self::Value, E>
-                where
-                    E: serde::de::Error, 
+            where
+                E: serde::de::Error,
             {
                 let mut int_or_str = IntOrString::new();
                 int_or_str.set_strVal(v.to_owned());
-        
-                let mes = MessageField::some(int_or_str);
-        
-                Ok(mes)
+                Ok(MessageField::some(int_or_str))
             }
         }
 
@@ -328,28 +310,39 @@ pub mod converter {
         Ok(pb_value)
     }
 
-    // pub fn to_openapi<T, P>(val: P) -> Result<T, io::Error> 
-    // where 
-    //     T: DeserializeOwned,
-    //     P: Serialize
-    // {
-    //     let val_pb = serde_json::to_value(val).unwrap();
+        /// Function for convertion from k8s_openapi to rust-protobuf
+    /// # Example
+    /// 
+    /// ``` 
+    /// use k8s_rs_pb::api::core::v1::Pod;
+    /// use k8s_openapi::api::core::v1::Pod as OtherPod;
+    /// 
+    /// let pod_pb = Pod::default();
+    /// let pod_openapi: OtherPod = k8s_rs_pb::converter::to_openapi(pod_pb).unwrap();
+    /// 
+    pub fn to_openapi<T, P>(val: P) -> Result<T, io::Error> 
+    where 
+        T: DeserializeOwned,
+        P: Serialize
+    {
+        let val_pb = serde_json::to_value(val).unwrap();
 
-    //     let openapi_value: T = serde_json::from_value(val_pb).unwrap();
+        let openapi_value: T = serde_json::from_value(val_pb).unwrap();
 
-    //     Ok(openapi_value)
-    // }
+        Ok(openapi_value)
+    }
 }
 
 
 #[cfg(test)]
 mod tests {
-    use std::fs;
+    use std::{collections::BTreeMap, fs};
 
     use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
-    use k8s_openapi::api::core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod};
-
-    use crate::metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics};
+    use k8s_openapi::api::{core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod}, apps::v1::Deployment as OtherDeployment};
+    use kube::api::{ObjectList, TypeMeta};
+    use crate::{apimachinery::pkg::api::resource::Quantity, metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics}};
+    use crate::apimachinery::pkg::apis::meta::v1::{Duration, Time as TimePb};
 
     use super::*;
 
@@ -368,6 +361,30 @@ mod tests {
         assert_eq!(node_x.has_metadata(), true);
 
         // let dpl = ObjectList<Deployment>;
+    }
+
+    #[test]
+    fn succesfully_ser() {
+        let name = String::from("Name");
+
+        let mut pod_tt = OtherPod::default();
+
+        pod_tt.metadata.name = Some(name.clone());
+
+        let pod_x: Pod = converter::from_openapi(pod_tt).unwrap();
+
+        assert_eq!(pod_x.has_metadata(), true);
+
+        let node_tt = OtherNode::default();
+
+        let node_x: Node = converter::from_openapi(node_tt).unwrap();
+
+        assert_eq!(node_x.has_metadata(), true);
+
+        let other_pd: OtherPod = converter::to_openapi(pod_x.clone()).unwrap();
+
+        assert_eq!(name, other_pd.metadata.name.unwrap());
+        assert_eq!(name.as_str(), pod_x.metadata().name());
     }
 
     #[test]
@@ -411,14 +428,71 @@ mod tests {
         assert_eq!(pb_pd.has_spec(), true);
         assert_eq!(pb_pd.has_status(), true);
 
-        //close bug with MessageField<IntOrString>
         let dp_list = fs::read_to_string("testdata/deploy.json").unwrap();
 
         let x: DeploymentList = serde_json::from_str(&dp_list).unwrap();
 
-        println!{"{:#?}", x};
-
         assert_eq!(x.has_metadata(), true);
+    }
+
+    #[test]
+    fn succesfully_ser_with_serde_from_str() {
+        let pd_list = fs::read_to_string("testdata/podlist.json").unwrap();
+
+        let mut pb_pd_list: PodList = serde_json::from_str(&pd_list).unwrap();
+
+        let items = pb_pd_list.take_items();
+
+        assert_eq!(pb_pd_list.has_metadata(), true);
+        assert_eq!(items.is_empty(), false);
+
+        let mut pd_ls: ObjectList<OtherPod> = ObjectList{
+            types: TypeMeta::default(),
+            metadata: kube::api::ListMeta::default(),
+            items: Vec::new(),
+        };
+
+        for v in items.iter() {
+            let new_pod: OtherPod = converter::to_openapi(v).unwrap();
+            assert_eq!(v.metadata.name(), new_pod.metadata.name.clone().unwrap().as_str());
+
+            pd_ls.items.push(new_pod);
+        }
+
+        assert_eq!(items.len(), pd_ls.items.len());
+
+        pd_ls.items.clear();
+
+        let pd = fs::read_to_string("testdata/pod.json").unwrap();
+
+        let pb_pd: Pod = serde_json::from_str(&pd).unwrap();
+
+        assert_eq!(pb_pd.has_metadata(), true);
+        assert_eq!(pb_pd.has_spec(), true);
+        assert_eq!(pb_pd.has_status(), true);
+
+        let pd_api: OtherPod = converter::to_openapi(pb_pd.clone()).unwrap();
+
+        assert_eq!(pb_pd.metadata.name(), pd_api.metadata.name.clone().unwrap());
+
+        let dp_list = fs::read_to_string("testdata/deploy.json").unwrap();
+
+        let depl_list: DeploymentList = serde_json::from_str(&dp_list).unwrap();
+
+        let mut depl_api_ls: ObjectList<OtherDeployment> = ObjectList{
+            types: TypeMeta::default(),
+            metadata: kube::api::ListMeta::default(),
+            items: Vec::new(),
+        };
+
+        for v in depl_list.items().iter() {
+            let new_deploy: OtherDeployment = converter::to_openapi(v).unwrap();
+            assert_eq!(v.metadata.name(), new_deploy.metadata.name.clone().unwrap().as_str());
+
+            depl_api_ls.items.push(new_deploy);
+        }
+
+        assert_eq!(depl_list.items().len(), depl_api_ls.items.len());
     }
 
     #[test]
@@ -428,5 +502,79 @@ mod tests {
         let pb_event: Event = converter::from_openapi(open_event).unwrap();
 
         assert_eq!(pb_event.has_metadata(), true);
+    }
+
+    #[test]
+    fn test_duration_serialization() {
+        let mut dur = Duration::new();
+        dur.set_duration(30);
+        let serialized = serde_json::to_string(&dur).unwrap();
+        assert_eq!(serialized, "30");
+    }
+
+    #[test]
+    fn test_duration_deserialization() {
+        let json_str = "\"45s\"";
+        let deserialized: Duration = serde_json::from_str(json_str).unwrap();
+        assert_eq!(deserialized.duration(), 45);
+
+        let invalid_json = "\"1.5s\"";
+        let result: Result<Duration, _> = serde_json::from_str(invalid_json);
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap().duration(), 1);
+    }
+
+    #[test]
+    fn test_time_pb_round_trip() {
+        let time_str = "2024-01-01T00:00:00Z";
+        let deserialized: TimePb = serde_json::from_str(&format!("\"{}\"", time_str)).unwrap();
+        assert_eq!(deserialized.seconds(), 1704067200);
+        assert_eq!(deserialized.nanos(), 0);
+
+        let serialized = serde_json::to_string(&deserialized).unwrap();
+        assert_eq!(serialized, format!("\"{}\"", time_str));
+    }
+
+    // #[test]
+    // fn test_int_or_string_serialization() {
+    //     let mut int_or_str = IntOrString::new();
+    //     int_or_str.set_intVal(42);
+    //     let field = MessageField(Some(Box::new(int_or_str))); // Используйте обертку
+    
+    //     let serialized = serde_json::to_string(&field).unwrap();
+    //     assert_eq!(serialized, "42");
+    
+    //     let deserialized: MessageFieldDef<IntOrString> = serde_json::from_str(&serialized).unwrap();
+    //     assert!(deserialized.0.is_some());
+    //     assert_eq!(deserialized.0.unwrap().intVal(), 42);
+    // }
+
+    #[test]
+    fn test_quantity_map_deserialization() {
+        let json_str = r#"{"memory": "512Mi", "cpu": "100m"}"#;
+        let deserialized: BTreeMap<String, Quantity> = serde_json::from_str(json_str).unwrap();
+
+        assert_eq!(deserialized["memory"].string(), "536.9MB");
+        assert_eq!(deserialized["cpu"].string(), "0.00010");
+    }
+
+    #[test]
+    fn test_converter_with_service() {
+        use k8s_openapi::api::core::v1::Service;
+        use api::core::v1::Service as PbService;
+
+        let openapi_service = Service {
+            metadata: Default::default(),
+            spec: Some(Default::default()),
+            status: Some(Default::default()),
+        };
+
+        let pb_service: PbService = converter::from_openapi(openapi_service.clone()).unwrap();
+        assert!(pb_service.has_metadata());
+        assert!(pb_service.has_spec());
+        assert!(pb_service.has_status());
+
+        let converted_back: Service = converter::to_openapi(pb_service).unwrap();
+        assert_eq!(converted_back.metadata.uid, openapi_service.metadata.uid);
     }
 }
