@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ConversionRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for ConversionRequest {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ConversionResponse)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -541,7 +541,7 @@ impl ::protobuf::reflect::ProtobufValue for ConversionResponse {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ConversionReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -750,7 +750,7 @@ impl ::protobuf::reflect::ProtobufValue for ConversionReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceColumnDefinition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1164,7 +1164,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceColumnDefinition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceConversion)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1420,7 +1420,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceConversion {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1680,7 +1680,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2054,7 +2054,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2257,7 +2257,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionNames)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2668,7 +2668,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionNames {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3313,7 +3313,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3560,7 +3560,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionVersion)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4078,7 +4078,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceDefinitionVersion {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceSubresourceScale)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4347,7 +4347,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceSubresourceScale {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceSubresourceStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4453,7 +4453,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceSubresourceStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceSubresources)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4662,7 +4662,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceSubresources {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceValidation)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4820,7 +4820,7 @@ impl ::protobuf::reflect::ProtobufValue for CustomResourceValidation {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ExternalDocumentation)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5035,7 +5035,7 @@ impl ::protobuf::reflect::ProtobufValue for ExternalDocumentation {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.JSON)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5196,7 +5196,7 @@ impl ::protobuf::reflect::ProtobufValue for JSON {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaProps)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7327,7 +7327,7 @@ impl ::protobuf::reflect::ProtobufValue for JSONSchemaProps {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaPropsOrArray)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7530,7 +7530,7 @@ impl ::protobuf::reflect::ProtobufValue for JSONSchemaPropsOrArray {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaPropsOrBool)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7725,7 +7725,7 @@ impl ::protobuf::reflect::ProtobufValue for JSONSchemaPropsOrBool {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.JSONSchemaPropsOrStringArray)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7927,7 +7927,7 @@ impl ::protobuf::reflect::ProtobufValue for JSONSchemaPropsOrStringArray {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.SelectableField)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8088,7 +8088,7 @@ impl ::protobuf::reflect::ProtobufValue for SelectableField {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ServiceReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8394,7 +8394,7 @@ impl ::protobuf::reflect::ProtobufValue for ServiceReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.ValidationRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8808,7 +8808,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidationRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apiextensions_apiserver.pkg.apis.apiextensions.v1beta1.WebhookClientConfig)
 #[derive(PartialEq,Clone,Default,Debug)]

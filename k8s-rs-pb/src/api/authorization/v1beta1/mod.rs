@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.ExtraValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -175,7 +175,7 @@ impl ::protobuf::reflect::ProtobufValue for ExtraValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.LocalSubjectAccessReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -435,7 +435,7 @@ impl ::protobuf::reflect::ProtobufValue for LocalSubjectAccessReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.NonResourceAttributes)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -650,7 +650,7 @@ impl ::protobuf::reflect::ProtobufValue for NonResourceAttributes {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.NonResourceRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -845,7 +845,7 @@ impl ::protobuf::reflect::ProtobufValue for NonResourceRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.ResourceAttributes)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1330,7 +1330,7 @@ impl ::protobuf::reflect::ProtobufValue for ResourceAttributes {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.ResourceRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1613,7 +1613,7 @@ impl ::protobuf::reflect::ProtobufValue for ResourceRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SelfSubjectAccessReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1873,7 +1873,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectAccessReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SelfSubjectAccessReviewSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2082,7 +2082,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectAccessReviewSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SelfSubjectRulesReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2342,7 +2342,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectRulesReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SelfSubjectRulesReviewSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2503,7 +2503,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectRulesReviewSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SubjectAccessReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2763,7 +2763,7 @@ impl ::protobuf::reflect::ProtobufValue for SubjectAccessReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SubjectAccessReviewSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3183,7 +3183,7 @@ impl ::protobuf::reflect::ProtobufValue for SubjectAccessReviewSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SubjectAccessReviewStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3472,7 +3472,7 @@ impl ::protobuf::reflect::ProtobufValue for SubjectAccessReviewStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authorization.v1beta1.SubjectRulesReviewStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1alpha1.ClusterTrustBundle)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -233,7 +233,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterTrustBundle {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1alpha1.ClusterTrustBundleList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -436,7 +436,7 @@ impl ::protobuf::reflect::ProtobufValue for ClusterTrustBundleList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.certificates.v1alpha1.ClusterTrustBundleSpec)
 #[derive(PartialEq,Clone,Default,Debug)]

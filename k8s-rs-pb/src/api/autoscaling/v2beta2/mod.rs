@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ContainerResourceMetricSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -290,7 +290,7 @@ impl ::protobuf::reflect::ProtobufValue for ContainerResourceMetricSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ContainerResourceMetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -556,7 +556,7 @@ impl ::protobuf::reflect::ProtobufValue for ContainerResourceMetricStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.CrossVersionObjectReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -825,7 +825,7 @@ impl ::protobuf::reflect::ProtobufValue for CrossVersionObjectReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ExternalMetricSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1034,7 +1034,7 @@ impl ::protobuf::reflect::ProtobufValue for ExternalMetricSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ExternalMetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1243,7 +1243,7 @@ impl ::protobuf::reflect::ProtobufValue for ExternalMetricStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HPAScalingPolicy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1478,7 +1478,7 @@ impl ::protobuf::reflect::ProtobufValue for HPAScalingPolicy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HPAScalingRules)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1721,7 +1721,7 @@ impl ::protobuf::reflect::ProtobufValue for HPAScalingRules {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscaler)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1981,7 +1981,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscaler {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscalerBehavior)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2190,7 +2190,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscalerBehavior {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscalerCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2564,7 +2564,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscalerCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscalerList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2767,7 +2767,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscalerList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscalerSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3095,7 +3095,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscalerSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.HorizontalPodAutoscalerStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3454,7 +3454,7 @@ impl ::protobuf::reflect::ProtobufValue for HorizontalPodAutoscalerStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.MetricIdentifier)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3666,7 +3666,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricIdentifier {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.MetricSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4082,7 +4082,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.MetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4498,7 +4498,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.MetricTarget)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4798,7 +4798,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricTarget {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.MetricValueStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5044,7 +5044,7 @@ impl ::protobuf::reflect::ProtobufValue for MetricValueStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ObjectMetricSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5304,7 +5304,7 @@ impl ::protobuf::reflect::ProtobufValue for ObjectMetricSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ObjectMetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5564,7 +5564,7 @@ impl ::protobuf::reflect::ProtobufValue for ObjectMetricStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.PodsMetricSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5773,7 +5773,7 @@ impl ::protobuf::reflect::ProtobufValue for PodsMetricSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.PodsMetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5982,7 +5982,7 @@ impl ::protobuf::reflect::ProtobufValue for PodsMetricStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ResourceMetricSource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6194,7 +6194,7 @@ impl ::protobuf::reflect::ProtobufValue for ResourceMetricSource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.autoscaling.v2beta2.ResourceMetricStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,13 +24,12 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.node.v1.Overhead)
 #[derive(PartialEq,Clone,Default,Debug)]
 pub struct Overhead {
     // message fields
-    #[serde(with = "crate::quantity_parse")]
     #[serde(default)]
     // @@protoc_insertion_point(field:api.node.v1.Overhead.podFixed)
     pub podFixed: ::std::collections::BTreeMap<::std::string::String, crate::apimachinery::pkg::api::resource::Quantity>,
@@ -196,7 +195,7 @@ impl ::protobuf::reflect::ProtobufValue for Overhead {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.node.v1.RuntimeClass)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -510,7 +509,7 @@ impl ::protobuf::reflect::ProtobufValue for RuntimeClass {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.node.v1.RuntimeClassList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -713,7 +712,7 @@ impl ::protobuf::reflect::ProtobufValue for RuntimeClassList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.node.v1.Scheduling)
 #[derive(PartialEq,Clone,Default,Debug)]

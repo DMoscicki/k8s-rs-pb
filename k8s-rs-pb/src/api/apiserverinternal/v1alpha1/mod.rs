@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.ServerStorageVersion)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -327,7 +327,7 @@ impl ::protobuf::reflect::ProtobufValue for ServerStorageVersion {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.StorageVersion)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -587,7 +587,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersion {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.StorageVersionCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -998,7 +998,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.StorageVersionList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1201,7 +1201,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.StorageVersionSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1307,7 +1307,7 @@ impl ::protobuf::reflect::ProtobufValue for StorageVersionSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apiserverinternal.v1alpha1.StorageVersionStatus)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.APIGroup)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -326,7 +326,7 @@ impl ::protobuf::reflect::ProtobufValue for APIGroup {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.APIGroupList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -478,7 +478,7 @@ impl ::protobuf::reflect::ProtobufValue for APIGroupList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.APIResource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1085,7 +1085,7 @@ impl ::protobuf::reflect::ProtobufValue for APIResource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.APIResourceList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1291,7 +1291,7 @@ impl ::protobuf::reflect::ProtobufValue for APIResourceList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.APIVersions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1487,7 +1487,7 @@ impl ::protobuf::reflect::ProtobufValue for APIVersions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ApplyOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1729,7 +1729,7 @@ impl ::protobuf::reflect::ProtobufValue for ApplyOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Condition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2140,7 +2140,7 @@ impl ::protobuf::reflect::ProtobufValue for Condition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.CreateOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2399,7 +2399,7 @@ impl ::protobuf::reflect::ProtobufValue for CreateOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.DeleteOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2870,7 +2870,7 @@ impl ::protobuf::reflect::ProtobufValue for Duration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.FieldsV1)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3031,7 +3031,7 @@ impl ::protobuf::reflect::ProtobufValue for FieldsV1 {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GetOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3192,7 +3192,7 @@ impl ::protobuf::reflect::ProtobufValue for GetOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupKind)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3407,7 +3407,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupKind {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupResource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3622,7 +3622,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupResource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupVersion)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3837,7 +3837,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupVersion {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupVersionForDiscovery)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4052,7 +4052,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupVersionForDiscovery {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupVersionKind)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4321,7 +4321,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupVersionKind {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.GroupVersionResource)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4590,7 +4590,7 @@ impl ::protobuf::reflect::ProtobufValue for GroupVersionResource {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.LabelSelector)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4803,7 +4803,7 @@ impl ::protobuf::reflect::ProtobufValue for LabelSelector {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.LabelSelectorRequirement)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5062,7 +5062,7 @@ impl ::protobuf::reflect::ProtobufValue for LabelSelectorRequirement {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.List)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5265,7 +5265,7 @@ impl ::protobuf::reflect::ProtobufValue for List {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ListMeta)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5571,7 +5571,7 @@ impl ::protobuf::reflect::ProtobufValue for ListMeta {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ListOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6133,7 +6133,7 @@ impl ::protobuf::reflect::ProtobufValue for ListOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6612,7 +6612,7 @@ impl ::protobuf::reflect::ProtobufValue for ManagedFieldsEntry {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.MicroTime)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6793,7 +6793,7 @@ impl ::protobuf::reflect::ProtobufValue for MicroTime {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ObjectMeta)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7647,7 +7647,7 @@ impl ::protobuf::reflect::ProtobufValue for ObjectMeta {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.OwnerReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8044,7 +8044,7 @@ impl ::protobuf::reflect::ProtobufValue for OwnerReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.PartialObjectMetadata)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8202,7 +8202,7 @@ impl ::protobuf::reflect::ProtobufValue for PartialObjectMetadata {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.PartialObjectMetadataList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8405,7 +8405,7 @@ impl ::protobuf::reflect::ProtobufValue for PartialObjectMetadataList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Patch)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8511,7 +8511,7 @@ impl ::protobuf::reflect::ProtobufValue for Patch {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.PatchOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8807,7 +8807,7 @@ impl ::protobuf::reflect::ProtobufValue for PatchOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Preconditions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -9022,7 +9022,7 @@ impl ::protobuf::reflect::ProtobufValue for Preconditions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.RootPaths)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -9173,7 +9173,7 @@ impl ::protobuf::reflect::ProtobufValue for RootPaths {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.ServerAddressByClientCIDR)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -9388,7 +9388,7 @@ impl ::protobuf::reflect::ProtobufValue for ServerAddressByClientCIDR {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Status)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -9796,7 +9796,7 @@ impl ::protobuf::reflect::ProtobufValue for Status {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.StatusCause)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -10065,7 +10065,7 @@ impl ::protobuf::reflect::ProtobufValue for StatusCause {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.StatusDetails)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -10470,7 +10470,7 @@ impl ::protobuf::reflect::ProtobufValue for StatusDetails {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.TableOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -10809,7 +10809,7 @@ impl ::protobuf::reflect::ProtobufValue for Time {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Timestamp)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -10990,7 +10990,7 @@ impl ::protobuf::reflect::ProtobufValue for Timestamp {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.TypeMeta)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -11205,7 +11205,7 @@ impl ::protobuf::reflect::ProtobufValue for TypeMeta {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.UpdateOptions)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -11464,7 +11464,7 @@ impl ::protobuf::reflect::ProtobufValue for UpdateOptions {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.Verbs)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -11615,7 +11615,7 @@ impl ::protobuf::reflect::ProtobufValue for Verbs {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.apis.meta.v1.WatchEvent)
 #[derive(PartialEq,Clone,Default,Debug)]

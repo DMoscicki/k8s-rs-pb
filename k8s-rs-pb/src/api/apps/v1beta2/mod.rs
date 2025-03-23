@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ControllerRevision)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -270,7 +270,7 @@ impl ::protobuf::reflect::ProtobufValue for ControllerRevision {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ControllerRevisionList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -473,7 +473,7 @@ impl ::protobuf::reflect::ProtobufValue for ControllerRevisionList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSet)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -733,7 +733,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSet {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSetCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1107,7 +1107,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSetCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSetList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1310,7 +1310,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSetList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSetSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1644,7 +1644,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSetSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSetStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2129,7 +2129,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSetStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DaemonSetUpdateStrategy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2341,7 +2341,7 @@ impl ::protobuf::reflect::ProtobufValue for DaemonSetUpdateStrategy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.Deployment)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2601,7 +2601,7 @@ impl ::protobuf::reflect::ProtobufValue for Deployment {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DeploymentCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3026,7 +3026,7 @@ impl ::protobuf::reflect::ProtobufValue for DeploymentCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DeploymentList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3229,7 +3229,7 @@ impl ::protobuf::reflect::ProtobufValue for DeploymentList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DeploymentSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3674,7 +3674,7 @@ impl ::protobuf::reflect::ProtobufValue for DeploymentSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DeploymentStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4085,7 +4085,7 @@ impl ::protobuf::reflect::ProtobufValue for DeploymentStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.DeploymentStrategy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4297,7 +4297,7 @@ impl ::protobuf::reflect::ProtobufValue for DeploymentStrategy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ReplicaSet)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4557,7 +4557,7 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSet {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ReplicaSetCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4931,7 +4931,7 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSetCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ReplicaSetList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5134,7 +5134,7 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSetList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ReplicaSetSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5417,7 +5417,7 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSetSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ReplicaSetStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5754,7 +5754,7 @@ impl ::protobuf::reflect::ProtobufValue for ReplicaSetStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.RollingUpdateDaemonSet)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5963,7 +5963,7 @@ impl ::protobuf::reflect::ProtobufValue for RollingUpdateDaemonSet {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.RollingUpdateDeployment)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6172,7 +6172,7 @@ impl ::protobuf::reflect::ProtobufValue for RollingUpdateDeployment {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.RollingUpdateStatefulSetStrategy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6367,7 +6367,7 @@ impl ::protobuf::reflect::ProtobufValue for RollingUpdateStatefulSetStrategy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.Scale)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6627,7 +6627,7 @@ impl ::protobuf::reflect::ProtobufValue for Scale {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ScaleSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6771,7 +6771,7 @@ impl ::protobuf::reflect::ProtobufValue for ScaleSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.ScaleStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7029,7 +7029,7 @@ impl ::protobuf::reflect::ProtobufValue for ScaleStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSet)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7289,7 +7289,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSet {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7663,7 +7663,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -7866,7 +7866,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetOrdinals)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8010,7 +8010,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetOrdinals {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetPersistentVolumeClaimRetentionPolicy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8225,7 +8225,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetPersistentVolumeClaimRete
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -8851,7 +8851,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -9370,7 +9370,7 @@ impl ::protobuf::reflect::ProtobufValue for StatefulSetStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.apps.v1beta2.StatefulSetUpdateStrategy)
 #[derive(PartialEq,Clone,Default,Debug)]

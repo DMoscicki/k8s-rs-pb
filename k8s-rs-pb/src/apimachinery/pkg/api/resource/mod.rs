@@ -182,7 +182,7 @@ impl ::protobuf::reflect::ProtobufValue for Quantity {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:apimachinery.pkg.api.resource.QuantityValue)
 #[derive(PartialEq,Clone,Default,Debug)]

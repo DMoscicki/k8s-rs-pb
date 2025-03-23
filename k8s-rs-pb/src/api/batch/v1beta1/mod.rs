@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1beta1.CronJob)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -284,7 +284,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJob {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1beta1.CronJobList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -487,7 +487,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1beta1.CronJobSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -955,7 +955,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1beta1.CronJobStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1209,7 +1209,7 @@ impl ::protobuf::reflect::ProtobufValue for CronJobStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.batch.v1beta1.JobTemplateSpec)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admission.v1beta1.AdmissionRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -900,7 +900,7 @@ impl ::protobuf::reflect::ProtobufValue for AdmissionRequest {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admission.v1beta1.AdmissionResponse)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1357,7 +1357,7 @@ impl ::protobuf::reflect::ProtobufValue for AdmissionResponse {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admission.v1beta1.AdmissionReview)
 #[derive(PartialEq,Clone,Default,Debug)]

@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.HTTPIngressPath)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -290,7 +290,7 @@ impl ::protobuf::reflect::ProtobufValue for HTTPIngressPath {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.HTTPIngressRuleValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -442,7 +442,7 @@ impl ::protobuf::reflect::ProtobufValue for HTTPIngressRuleValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.Ingress)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -702,7 +702,7 @@ impl ::protobuf::reflect::ProtobufValue for Ingress {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressBackend)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -965,7 +965,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressBackend {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressClass)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1174,7 +1174,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressClass {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressClassList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1377,7 +1377,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressClassList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressClassParametersReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1754,7 +1754,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressClassParametersReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressClassSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1966,7 +1966,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressClassSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2169,7 +2169,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressLoadBalancerIngress)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2429,7 +2429,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressLoadBalancerIngress {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressLoadBalancerStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2581,7 +2581,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressLoadBalancerStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressPortStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2833,7 +2833,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressPortStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressRule)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3045,7 +3045,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressRule {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressRuleValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3203,7 +3203,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressRuleValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3505,7 +3505,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3663,7 +3663,7 @@ impl ::protobuf::reflect::ProtobufValue for IngressStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.networking.v1beta1.IngressTLS)
 #[derive(PartialEq,Clone,Default,Debug)]

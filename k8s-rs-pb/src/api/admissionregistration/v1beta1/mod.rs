@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.AuditAnnotation)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -239,7 +239,7 @@ impl ::protobuf::reflect::ProtobufValue for AuditAnnotation {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ExpressionWarning)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -454,7 +454,7 @@ impl ::protobuf::reflect::ProtobufValue for ExpressionWarning {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.MatchCondition)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -669,7 +669,7 @@ impl ::protobuf::reflect::ProtobufValue for MatchCondition {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.MatchResources)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1022,7 +1022,7 @@ impl ::protobuf::reflect::ProtobufValue for MatchResources {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.MutatingWebhook)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1723,7 +1723,7 @@ impl ::protobuf::reflect::ProtobufValue for MutatingWebhook {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.MutatingWebhookConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1926,7 +1926,7 @@ impl ::protobuf::reflect::ProtobufValue for MutatingWebhookConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.MutatingWebhookConfigurationList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2129,7 +2129,7 @@ impl ::protobuf::reflect::ProtobufValue for MutatingWebhookConfigurationList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.NamedRuleWithOperations)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2331,7 +2331,7 @@ impl ::protobuf::reflect::ProtobufValue for NamedRuleWithOperations {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ParamKind)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2546,7 +2546,7 @@ impl ::protobuf::reflect::ProtobufValue for ParamKind {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ParamRef)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2866,7 +2866,7 @@ impl ::protobuf::reflect::ProtobufValue for ParamRef {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ServiceReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3172,7 +3172,7 @@ impl ::protobuf::reflect::ProtobufValue for ServiceReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.TypeChecking)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3324,7 +3324,7 @@ impl ::protobuf::reflect::ProtobufValue for TypeChecking {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicy)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3584,7 +3584,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicy {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBinding)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3793,7 +3793,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicyBinding {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBindingList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -3996,7 +3996,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicyBindingList
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicyBindingSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4303,7 +4303,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicyBindingSpec
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicyList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4506,7 +4506,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicyList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicySpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -4949,7 +4949,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicySpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingAdmissionPolicyStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5189,7 +5189,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingAdmissionPolicyStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingWebhook)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -5836,7 +5836,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingWebhook {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingWebhookConfiguration)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6039,7 +6039,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingWebhookConfiguration {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.ValidatingWebhookConfigurationList)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6242,7 +6242,7 @@ impl ::protobuf::reflect::ProtobufValue for ValidatingWebhookConfigurationList {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.Validation)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6565,7 +6565,7 @@ impl ::protobuf::reflect::ProtobufValue for Validation {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.Variable)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -6780,7 +6780,7 @@ impl ::protobuf::reflect::ProtobufValue for Variable {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.admissionregistration.v1beta1.WebhookClientConfig)
 #[derive(PartialEq,Clone,Default,Debug)]

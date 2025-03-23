@@ -24,7 +24,7 @@
 /// of protobuf runtime.
 const _PROTOBUF_VERSION_CHECK: () = ::protobuf::VERSION_3_7_2;
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.BoundObjectReference)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -347,7 +347,7 @@ impl ::protobuf::reflect::ProtobufValue for BoundObjectReference {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.ExtraValue)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -498,7 +498,7 @@ impl ::protobuf::reflect::ProtobufValue for ExtraValue {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.SelfSubjectReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -707,7 +707,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.SelfSubjectReviewStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -865,7 +865,7 @@ impl ::protobuf::reflect::ProtobufValue for SelfSubjectReviewStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenRequest)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1125,7 +1125,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenRequest {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenRequestSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1364,7 +1364,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenRequestSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenRequestStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1576,7 +1576,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenRequestStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenReview)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -1836,7 +1836,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenReview {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenReviewSpec)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2041,7 +2041,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenReviewSpec {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.TokenReviewStatus)
 #[derive(PartialEq,Clone,Default,Debug)]
@@ -2334,7 +2334,7 @@ impl ::protobuf::reflect::ProtobufValue for TokenReviewStatus {
     type RuntimeType = ::protobuf::reflect::rt::RuntimeTypeMessage<Self>;
 }
 
-#[derive(::serde::Deserialize)]
+#[derive(::serde::Deserialize, ::serde::Serialize)]
 #[serde(rename_all = "snake_case")]
 // @@protoc_insertion_point(message:api.authentication.v1.UserInfo)
 #[derive(PartialEq,Clone,Default,Debug)]
