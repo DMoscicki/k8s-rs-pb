@@ -291,11 +291,11 @@ pub mod converter {
     /// # Example
     /// 
     /// ``` 
-    /// use k8s_rs_pb::v1_30::api::core::v1::Pod;
+    /// use k8s_rs_pb::api::core::v1::Pod;
     /// use k8s_openapi::api::core::v1::Pod as OtherPod;
     /// 
     /// let pod_openapi = OtherPod::default();
-    /// let pod_pb: Pod = k8s_rs_pb::v1_30::converter::from_openapi(pod_openapi).unwrap();
+    /// let pod_pb: Pod = k8s_rs_pb::converter::from_openapi(pod_openapi).unwrap();
     /// assert_eq!(pod_pb.has_metadata(), true);
     /// ```
     pub fn from_openapi<P, T>(val: T) -> Result<P, io::Error>
@@ -314,11 +314,11 @@ pub mod converter {
     /// # Example
     /// 
     /// ``` 
-    /// use k8s_rs_pb::v1_30::api::core::v1::Pod;
+    /// use k8s_rs_pb::api::core::v1::Pod;
     /// use k8s_openapi::api::core::v1::Pod as OtherPod;
     /// 
     /// let pod_pb = Pod::default();
-    /// let pod_openapi: OtherPod = k8s_rs_pb::v1_30::converter::to_openapi(pod_pb).unwrap();
+    /// let pod_openapi: OtherPod = k8s_rs_pb::converter::to_openapi(pod_pb).unwrap();
     /// 
     pub fn to_openapi<T, P>(val: P) -> Result<T, io::Error> 
     where 
