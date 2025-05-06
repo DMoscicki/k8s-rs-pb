@@ -106,19 +106,6 @@ protos-rust:
 protos-end:
     #!/usr/bin/env bash
     set -exuo pipefail
-    # Normalize directory names
-    # mv -f k8s-rs-pb/src/apiextensions-apiserver k8s-rs-pb/src/apiextensions_apiserver
-    # mv -f k8s-rs-pb/src/kube-aggregator k8s-rs-pb/src/kube_aggregator
-    
-    # Create version module
-    echo "#![allow(non_snake_case)]" > k8s-rs-pb/src/lib.rs
-    for version in {{KUBERNETES_VERSIONS}}; do
-        version_dir="{{VERSION_PREFIX}}$(echo ${version} | tr . _ | cut -d'_' -f1-2)"
-        echo "#[cfg(feature = \"${version_dir}\")]" >> k8s-rs-pb/src/lib.rs
-        echo "pub mod ${version_dir};" >> k8s-rs-pb/src/lib.rs
-    done
-    
-    # Cleanup
     rm -rf k8s-pb codegen
 
 protos: protos-dl protos-patch protos-rust protos-end
