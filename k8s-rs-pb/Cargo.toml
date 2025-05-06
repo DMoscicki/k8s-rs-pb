@@ -7,7 +7,7 @@ categories = ["api-bindings", "kubernetes", "k8s", "web"]
 license = "MIT"
 homepage = "https://github.com/DMoscicki/k8s-rs-pb/"
 repository = "https://github.com/DMoscicki/k8s-rs-pb/"
-documentation = "https://github.com/DMoscicki/k8s-rs-pb/blob/master/README.md"
+documentation = "https://github.com/DMoscicki/k8s-rs-pb/blob/v0.3.0/README.md"
 description = "Bindings from k8s-openapi to rust-protobuf which support application/vnd.kubernetes.protobuf"
 publish = true
 

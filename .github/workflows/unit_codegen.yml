@@ -30,4 +30,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Cargo test
-        run: cargo test
+        run: cargo test -p k8s-rs-pb --all-features
