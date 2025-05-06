@@ -1,3 +1,7 @@
+Вот обновлённый README на английском языке с описанием фичей, включённым в раздел **"Features"** и дополненными примерами использования с указанием активации нужных фич:
+
+---
+
 # k8s-rs-pb
 
 **Inspired by [k8s-pb](https://github.com/kube-rs/k8s-pb)**
@@ -5,6 +9,28 @@
 This experimental package aims to bridge the gap between Kubernetes OpenAPI objects and Rust's Protobuf ecosystem. It provides seamless conversion utilities to transform Kubernetes objects from `k8s-openapi` (used in [kube-rs](https://github.com/kube-rs/kube-rs)) into Rust-Protobuf representations, and vice versa.
 
 This tool was born out of necessity for [kubesman](https://github.com/DMoscicki/kubesman), where describing each Kubernetes object in JSON for frontend consumption became a cumbersome task. With `k8s-rs-pb`, you can generate Protobuf definitions tailored to your specific Kubernetes version, making it easier to work with Kubernetes objects in a type-safe and efficient manner.
+
+---
+
+## Features
+
+The crate supports multiple versions of the Kubernetes API via Cargo features. You can choose which version to use based on your project requirements:
+
+| Feature     | Description                              |
+|-------------|------------------------------------------|
+| `v1_30`     | Support for Kubernetes API version 1.30  |
+| `v1_31`     | Support for Kubernetes API version 1.31  |
+| `v1_32`     | Support for Kubernetes API version 1.32  |
+| `v1_33`     | Support for Kubernetes API version 1.33  |
+| `earliest`  | Enables the oldest supported version (`v1_30`) |
+| `latest`    | Enables the latest supported version (`v1_33`) |
+
+To use a specific version, activate the corresponding feature in your `Cargo.toml`:
+
+```toml
+[dependencies]
+k8s-rs-pb = { version = "0.3.0", features = ["v1_32"] }
+```
 
 ---
 
@@ -39,6 +65,8 @@ use k8s_openapi::api::core::v1::Pod as OtherPod;
 let pod_pb = Pod::default();
 let pod_openapi: OtherPod = k8s_rs_pb::converter::to_openapi(pod_pb).unwrap();
 ```
+
+---
 
 ## Build Dependencies
 
