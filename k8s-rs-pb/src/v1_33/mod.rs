@@ -3,6 +3,7 @@ pub mod apiextensions_apiserver;
 pub mod apimachinery;
 pub mod kube_aggregator;
 pub mod metrics;
+pub mod extension;
 
 use serde::{Deserialize, Serialize};
 use protobuf::MessageField;
@@ -341,7 +342,7 @@ mod tests {
     use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
     use k8s_openapi::api::{core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod}, apps::v1::Deployment as OtherDeployment};
     use kube::api::{ObjectList, TypeMeta};
-    use super::{apimachinery::pkg::api::resource::Quantity, metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics}};
+    use super::{apimachinery::pkg::api::resource::Quantity, extension::KubeAPIServerMessage, metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics}};
     use super::apimachinery::pkg::apis::meta::v1::{Duration, Time as TimePb};
 
     use super::*;
@@ -535,20 +536,6 @@ mod tests {
         assert_eq!(serialized, format!("\"{}\"", time_str));
     }
 
-    // #[test]
-    // fn test_int_or_string_serialization() {
-    //     let mut int_or_str = IntOrString::new();
-    //     int_or_str.set_intVal(42);
-    //     let field = MessageField(Some(Box::new(int_or_str))); // Используйте обертку
-    
-    //     let serialized = serde_json::to_string(&field).unwrap();
-    //     assert_eq!(serialized, "42");
-    
-    //     let deserialized: MessageFieldDef<IntOrString> = serde_json::from_str(&serialized).unwrap();
-    //     assert!(deserialized.0.is_some());
-    //     assert_eq!(deserialized.0.unwrap().intVal(), 42);
-    // }
-
     #[test]
     fn test_quantity_map_deserialization() {
         let json_str = r#"{"memory": "512Mi", "cpu": "100m"}"#;
@@ -576,5 +563,13 @@ mod tests {
 
         let converted_back: Service = converter::to_openapi(pb_service).unwrap();
         assert_eq!(converted_back.metadata.uid, openapi_service.metadata.uid);
+    }
+
+    #[test]
+    fn test_kubeapiserver_protobuf() {
+        let pb_pdlist = fs::read("./testdata/apiserver.bin").unwrap();
+        let ls_struct = PodList::parse_from_apiserver_bytes(&pb_pdlist).unwrap();
+
+        assert_eq!(false, ls_struct.items().is_empty());
     }
 }

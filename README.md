@@ -25,7 +25,7 @@ To use a specific version, activate the corresponding feature in your `Cargo.tom
 
 ```toml
 [dependencies]
-k8s-rs-pb = { version = "0.3.0", features = ["v1_32"] }
+k8s-rs-pb = { version = "0.4.0", features = ["v1_32"] }
 ```
 
 ---
@@ -33,6 +33,7 @@ k8s-rs-pb = { version = "0.3.0", features = ["v1_32"] }
 ## Key Features
 
 - **Seamless Conversion**: Convert Kubernetes objects between `k8s-openapi` and Protobuf formats effortlessly.
+- **Direct API Server Parsing**: Handle Protobuf responses from Kubernetes API server including magic number prefixes and `Unknown` message encapsulation. The `KubeAPIServerMessage` trait automatically decodes responses using the [k8s protobuf wire format](https://kubernetes.io/docs/reference/using-api/api-concepts/#protobuf-encoding).
 - **Customizable Protobuf Generation**: Generate Protobuf definitions for your specific Kubernetes version by tweaking the `KUBERNETES_VERSION` variable in the `justfile`.
 - **Lightweight and Experimental**: Designed as a lightweight utility to simplify Kubernetes object handling in Rust projects.
 
@@ -60,6 +61,15 @@ use k8s_openapi::api::core::v1::Pod as OtherPod;
 
 let pod_pb = Pod::default();
 let pod_openapi: OtherPod = k8s_rs_pb::converter::to_openapi(pod_pb).unwrap();
+```
+
+### Parse Protobuf from kube-apiserver
+```rust
+use k8s_rs_pb::extension::KubeAPIServerMessage;
+use k8s_rs_pb::api::core::v1::Pod;
+
+// Handles the "k8s\x00" magic prefix and Unknown wrapper
+let pod = Pod::parse_from_apiserver_bytes(&raw_apiserver_response).unwrap();
 ```
 
 ---
@@ -90,7 +100,7 @@ This project is experimental and open to contributions! If you encounter any iss
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
