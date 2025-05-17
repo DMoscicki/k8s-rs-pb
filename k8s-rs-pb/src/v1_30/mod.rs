@@ -3,6 +3,7 @@ pub mod apiextensions_apiserver;
 pub mod apimachinery;
 pub mod kube_aggregator;
 pub mod metrics;
+pub mod extension;
 
 use serde::{Deserialize, Serialize};
 use protobuf::MessageField;
@@ -341,9 +342,8 @@ mod tests {
     use api::{apps::v1::DeploymentList, core::v1::{Event, Node, Pod, PodList}};
     use k8s_openapi::api::{core::v1::{Event as OtherEvent, Node as OtherNode, Pod as OtherPod}, apps::v1::Deployment as OtherDeployment};
     use kube::api::{ObjectList, TypeMeta};
-    use super::{apimachinery::pkg::api::resource::Quantity, metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics}};
+    use super::{apimachinery::pkg::api::resource::Quantity, extension::KubeAPIServerMessage, metrics::pkg::apis::metrics::v1beta1::{NodeMetrics, PodMetrics}};
     use super::apimachinery::pkg::apis::meta::v1::{Duration, Time as TimePb};
-
     use super::*;
 
     #[test]
@@ -576,5 +576,13 @@ mod tests {
 
         let converted_back: Service = converter::to_openapi(pb_service).unwrap();
         assert_eq!(converted_back.metadata.uid, openapi_service.metadata.uid);
+    }
+
+    #[test]
+    fn test_kubeapiserver_protobuf() {
+        let pb_pdlist = fs::read("./testdata/apiserver.bin").unwrap();
+        let ls_struct = PodList::parse_from_apiserver_bytes(&pb_pdlist).unwrap();
+
+        assert_eq!(false, ls_struct.items().is_empty());
     }
 }
