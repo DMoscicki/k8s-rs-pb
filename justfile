@@ -1,5 +1,5 @@
 #-------------------------Kubernetes Proto Generation---------------------------
-KUBERNETES_VERSIONS := "1.30.1 1.31.1 1.32.1 1.33.0"
+KUBERNETES_VERSIONS := "1.30.1 1.31.1 1.32.10 1.33.6 1.34.2 1.35.0"
 VERSION_PREFIX := "v"
 
 default:
@@ -98,6 +98,7 @@ protos-rust:
         fd -e rs -x sd 'super::generated::JobSpec' "crate::${version_dir}::api::batch::v1::JobSpec"
         fd -e rs -x sd 'super::generated::FieldSelectorAttributes' "crate::${version_dir}::api::authorization::v1::FieldSelectorAttributes"
         fd -e rs -x sd 'super::generated::FieldSelectorRequirement' "crate::${version_dir}::apimachinery::pkg::apis::meta::v1::FieldSelectorRequirement"
+        fd -e rs -x sd 'super::generated::GroupResource' "crate::${version_dir}::apimachinery::pkg::apis::meta::v1::GroupResource"
         cd ../../../
         
         ./codegen overwrite true "${version_dir}"

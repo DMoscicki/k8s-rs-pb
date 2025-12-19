@@ -18,14 +18,17 @@ The crate supports multiple versions of the Kubernetes API via Cargo features. Y
 | `v1_31`     | Support for Kubernetes API version 1.31  |
 | `v1_32`     | Support for Kubernetes API version 1.32  |
 | `v1_33`     | Support for Kubernetes API version 1.33  |
+| `v1_34`     | Support for Kubernetes API version 1.34  |
+| `v1_35`     | Support for Kubernetes API version 1.35  |
 | `earliest`  | Enables the oldest supported version (`v1_30`) |
-| `latest`    | Enables the latest supported version (`v1_33`) |
+| `latest`    | Enables the latest supported version (`v1_35`) |
+| `default`   | Enables the default version (`latest`) |
 
 To use a specific version, activate the corresponding feature in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-k8s-rs-pb = { version = "0.4.0", features = ["v1_32"] }
+k8s-rs-pb = { version = "0.5.0", features = ["v1_32"] }
 ```
 
 ---

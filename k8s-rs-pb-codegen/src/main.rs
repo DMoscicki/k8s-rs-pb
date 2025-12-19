@@ -28,10 +28,6 @@ impl CustomizeCallback for GenStruct {
     fn field(&self, field: &FieldDescriptor) -> Customize {
 
         let version = env::var("version").unwrap();
-
-        // if BMAP_FIELDS.contains(&field.proto().name()) && field.is_map() {
-        //     return Customize::default().before("#[serde(with = \"crate::quantity_parse\")]\n#[serde(default)]")
-        // }
         
         if BMAP_FIELDS.contains(&field.proto().name()) && field.is_map() {
             return Customize::default().before("#[serde(default)]")
@@ -141,48 +137,6 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
-
-// fn overwrite_mods<'a>(path: &Path, mod_files: &'a mut Vec<PathBuf>) -> io::Result<()> {
-//     for val in fs::read_dir(path)? {
-//         let res = val?;
-//         if res.file_type()?.is_dir() {
-//             overwrite_mods(res.path().as_path(), mod_files)?
-//         }
-//         if res.file_name().to_str().unwrap() == "mod.rs" {
-//             let res_p = res.path().clone();
-//             let splitx: Vec<&str> = res_p.as_path().to_str().unwrap().split("/").collect();
-//             let index = splitx.iter().position(|&n| {
-//                 n == "v1"
-//                     || n == "v1alpha1"
-//                     || n == "v1alpha2"
-//                     || n == "v2"
-//                     || n == "v1beta1"
-//                     || n == "v2beta1"
-//                     || n == "v2beta2"
-//                     || n == "v1beta2"
-//                     || n == "v1beta3"
-//             });
-//             if let Some(idx) = index {
-//                 let content = fs::read_to_string(res.path())?;
-
-//                 let to_str = format!("::{}::", splitx.get(idx).unwrap());
-
-//                 let new_content = content.replace("::generated::", &to_str);
-
-//                 let mut file = OpenOptions::new()
-//                     .write(true)
-//                     .truncate(true)
-//                     .open(res.path())?;
-
-//                 file.write(new_content.as_bytes())?;
-//                 file.flush()?
-//             }
-
-//             mod_files.push(res.path());
-//         }
-//     }
-//     Ok(())
-// }
 
 fn overwrite_mods(path: &Path, mod_files: &mut Vec<PathBuf>, version: &str) -> io::Result<()> {
     for entry in fs::read_dir(path)? {
